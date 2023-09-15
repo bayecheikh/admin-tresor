@@ -132,9 +132,11 @@ import * as XLSX from 'xlsx'
           }
           this.selectXlsx = null;
         },
-      submitForm () {       
+      submitForm () {   
+        
+        alert("Liste envoyée")
 
-        for(let i=1;i<this.model.excelFile.length;i++){
+        /* for(let i=1;i<this.model.excelFile.length;i++){
           let validation = this.$refs.form.validate()
 
           let formData = new FormData();
@@ -203,7 +205,7 @@ import * as XLSX from 'xlsx'
           else{
             alert("veuillez verifier tous les champs du formulaire avant de soumettre")
           }
-        }
+        } */
       },
       resetInfoElecteur () {
         this.model.excelFile =""

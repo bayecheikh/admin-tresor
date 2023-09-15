@@ -12,7 +12,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'REWMI',
+    title: 'TRESOR',
     htmlAttrs: {
       lang: 'fr'
     },
@@ -62,7 +62,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'https://msas.ip3dev.com/api-cecar/public/api',
+    baseURL: 'https://msas.ip3dev.com/api-tresor/public/api',
   },
   
   auth: {
@@ -131,6 +131,6 @@ export default {
   },
 
   env: {
-    baseUrl: 'https://msas.ip3dev.com/api-cecar/public/api',
+    baseUrl: 'https://msas.ip3dev.com/api-tresor/public/api',
   }
 }

@@ -37,12 +37,6 @@
       "href": "/regions",
       "title": "Régions",
       "name": "gerer-parametres"
-    },
-    {
-      "icon": "mdi-account-group-outline",
-      "href": "/type_militants",
-      "title": "Types de membre",
-      "name": "gerer-parametres"
     }
   ]
  }

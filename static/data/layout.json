@@ -1,0 +1,72 @@
+{
+  "role":"admin",
+  "homePage":"/dashboard",
+  "menuItems":[
+    {
+      "icon": "mdi-view-dashboard-outline",
+      "href": "/dashboard",
+      "title": "Tableau de bord",
+      "name":"voir-dashboard"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/parrainages",
+      "title": "Parrainages",
+      "name": "gerer-parrainages"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/parrainages/importerParrainage",
+      "title": "Importer des parrainages",
+      "name": "importer-parrainages"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/annuaires",
+      "title": "Annuaires",
+      "name": "gerer-annuaires"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/utilisateurs",
+      "title": "Utilisateurs",
+      "name": "gerer-utilisateurs"
+    },
+    {
+      "icon": "mdi-account-lock-outline",
+      "href": "/roles",
+      "title": "Role",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-account-lock-outline",
+      "href": "/permissions",
+      "title": "Permissions",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/regions",
+      "title": "Régions",
+      "name": "gerer-regions"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/departements",
+      "title": "Départements",
+      "name": "gerer-departements"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/communes",
+      "title": "Communes",
+      "name": "gerer-communes"
+    },  
+    {
+      "icon": "mdi-account-lock-outline",
+      "href": "/parametres",
+      "title": "Parametres",
+      "name": "gerer-parametres"
+    }
+  ]
+ }

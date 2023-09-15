@@ -1,0 +1,48 @@
+{
+  "role":"admin",
+  "homePage":"/dashboard",
+  "menuItems":[
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/utilisateurs",
+      "title": "Utilisateurs",
+      "name": "gerer-utilisateurs"
+    },
+    {
+      "icon": "mdi-account-lock-outline",
+      "href": "/roles",
+      "title": "Rôles",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-account-lock-outline",
+      "href": "/permissions",
+      "title": "Permissions",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/communes",
+      "title": "Communes",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/departements",
+      "title": "Départements",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-cog-outline",
+      "href": "/regions",
+      "title": "Régions",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/type_militants",
+      "title": "Types de membre",
+      "name": "gerer-parametres"
+    }
+  ]
+ }

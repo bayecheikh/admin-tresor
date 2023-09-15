@@ -1,33 +1,47 @@
 <template>
   <div>
-    <v-form class="" ref="form" enctype="multipart/form-data">
-      <v-card class="mx-auto mb-5 pl-7 pt-7 pr-7 pb-5">
-        <div class="custom-ligne-bloc">               
-            <v-row>
-              <v-col md="12" lg="12" sm="12" class="py-4 my-0">
-                <template>
-                  <v-file-input
-                    accept=".xlsx"
-                    label="File input(xlsx)"
-                    outlined
-                    v-model="selectXlsx"
-                    show-size
-                    @change="uploadXlsx"
-                  >
-                  </v-file-input>
-                </template>
-              </v-col>
-            </v-row>
-            <v-btn depressed :loading="loading" class="mr-4" color="" @click="resetInfoElecteur">
-            Annuler
-          </v-btn>
-          <v-btn :disabled="!valid" depressed :loading="loading" class="mr-4 text-white" color="primary" @click="submitForm">
-            Importer
-          </v-btn>
-        </div>     
-      </v-card>
-      
-    </v-form>
+    <v-card class="mx-auto mb-5 pl-7 pt-7 pr-7 pb-5">
+      <div class="custom-ligne-bloc">               
+          <v-row>
+            <v-col md="12" lg="12" sm="12" class="py-4 my-0 d-flex">
+              <template>
+                <v-file-input
+                  accept=".xlsx"
+                  label="Importer des bénéficiaire (xlsx)"
+                  outlined
+                  v-model="selectXlsx"
+                  show-size
+                  @change="uploadXlsx"
+                >
+                </v-file-input>
+              </template>
+              <v-btn depressed :loading="loading" class="ml-2 mr-4" color="" @click="resetInfoElecteur">
+                Annuler
+              </v-btn>
+              <v-btn :disabled="!valid" depressed :loading="loading" class="mr-4 text-white" color="primary" @click="submitForm">
+                Payer
+              </v-btn>
+            </v-col>
+            
+          </v-row>
+          
+      </div>     
+    </v-card>
+ 
+    <v-card class="mx-auto mb-5 pl-7 pt-7 pr-7 pb-5">
+      <div class="custom-ligne-bloc">               
+          <v-row>
+            <v-col md="12" lg="12" sm="12" class="py-4 my-0 d-flex">
+              Nombre total : {{ model.excelFile.length || 0}}
+            </v-col>
+            <v-col md="12" lg="12" sm="12" class="py-4 my-0 d-flex">
+              {{ model.excelFile}}
+            </v-col>
+            
+          </v-row>
+          
+      </div>     
+    </v-card>
   </div>
 </template>
 

@@ -5,7 +5,7 @@
     color="#fff"
   >   
       <nuxt-link class="customTopNav flex text-sm-left" to="/">
-        <img :width="50" src="@/static/logorewmi.png" alt="Rewmi">
+        <img :width="50" src="@/static/flag.png" alt="Rewmi">
       </nuxt-link>
 
       <nuxt-link class="customTopNav flex text-sm-center" v-for="(item,i) in layout" :key="i" :to="item.href? item.href : null">

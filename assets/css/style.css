@@ -233,11 +233,11 @@ html {
 }
 
 .bg-marron:hover {
-  background-color: #fb4c07;
+  background-color: #d79b06;
   color: #fff !important;
 }
 .bg-marron-2 {
-  background-color: #fb4c07;
+  background-color: #d79b06;
   border-radius: 5px;
   padding: 30px;
   color: #fff;
@@ -246,7 +246,7 @@ html {
 }
 .bg-marron-2:hover {
   border: solid 2px;
-  border-color: #fb4c07;
+  border-color: #d79b06;
   background-color: #000;
 }
 .color-white{
@@ -260,7 +260,7 @@ html {
   color: #000a3 !important;
 }
 .text-secondary{
-  color: #fb4c07 !important;
+  color: #d79b06 !important;
 }
 .border-right-solid{
   border-right: solid 2px gray;

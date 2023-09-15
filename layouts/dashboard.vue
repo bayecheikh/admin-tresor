@@ -12,7 +12,7 @@
         style="height:64px;"
       >
         <nuxt-link class="customTopNav flex text-sm-left" to="/">
-        <img src="@/static/logorewmi.png" width="50" alt="Espace Senegal Service">
+        <img src="@/static/flag.png" width="50" alt="Espace Senegal Service">
       </nuxt-link>
       </v-sheet>
 
@@ -119,7 +119,7 @@
     <v-footer height="auto" class="white pa-3">
       <span class="caption">&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer></v-spacer>
-      <span class="caption mr-1">&copy; {{ new Date().getFullYear() }} REWMI</span>
+      <span class="caption mr-1">&copy; {{ new Date().getFullYear() }} TRESOR PUBLIC</span>
     </v-footer>
   </v-app>
 </template>
@@ -186,11 +186,11 @@
     background-color: white;
 }
 .highlighted{
-  color: #fb4c07 !important;
-  background: #fb4c0700;
+  color: #d79b06 !important;
+  background: #d79b0600;
 }
 .highlighted .v-list-item__icon .v-icon{
-  color: #fb4c07 !important;
+  color: #d79b06 !important;
 }
 .text-menu{
   font-size: 13px !important;

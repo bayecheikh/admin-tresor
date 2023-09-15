@@ -23,7 +23,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logorewmi.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/flag.png' }
     ]
   },
 
@@ -112,7 +112,7 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: "#fb4c07",//marron
+          primary: "#d79b06",//marron
           secondary: "#000",//darkblue
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,

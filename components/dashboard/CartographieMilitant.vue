@@ -1,7 +1,7 @@
 <template>
   <v-card class="mx-auto mb-5 pl-10 pt-0 pr-10 pb-5 my-5 border-grey">
     <div class="custom-container mt-0">
-      <v-row justify="center" class="d-flex justify-content-between pt-5">
+      <!-- <v-row justify="center" class="d-flex justify-content-between pt-5">
         <v-col lg="3" md="3" sm="12" >
             <v-autocomplete
               v-model="model.region"
@@ -55,31 +55,28 @@
             >
             <v-btn text @click="onClearClicked" rounded color="green">Afficher tout</v-btn>
             </v-col>
-      </v-row>
-      <v-row class="row">
+      </v-row> -->
+      <v-row class="row pt-6">
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
               <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-auto">
-                <h4 class="">Nombre total de parraianages</h4>
+                <h4 class="">Nombre total de bénéficiaires</h4>
                 <h2 class="text-primary mt-2">{{model.nombre_total?model.nombre_total.toLocaleString():0}}</h2>
               </div>
-            
+                         
+        </div> 
+        <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
+         
               <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
-                <h4 class="">Nombre d'hommes</h4>
+                <h4 class="">Nombre de bénéficiaire Wave</h4>
                 <h2 class="text-primary mt-2">{{model.nombre_homme?model.nombre_homme.toLocaleString():0}}</h2>
-              </div>
-           
+              </div>             
+        </div> 
+        <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">        
               <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
-                <h4 class="">Nombre de femmes</h4>
+                <h4 class="">Nombre de bénéficiaire OM</h4>
                 <h2 class="text-primary mt-2">{{model.nombre_femme?model.nombre_femme.toLocaleString():0}}</h2>
               </div>              
-        </div> 
-        <div class="col-lg-8 col-md-8 col-sm-12 m-0 pt-0 pl-15 pb-30 d-flex flex-column border-grey">
-          <button class="btn btn-success" type="button" disabled style="position: absolute; z-index: 100; top: 50%; left: 50%;" v-if="isloading">
-          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Chargement des données encours...
-          </button>
-          <div id="chartdiv"></div>                   
-        </div>           
+        </div>        
       </v-row>             
     </div>
   </v-card>
@@ -281,7 +278,7 @@
                       let nbr = list.filter(res=>(res.region==region.nom_region)).length
 
                       //console.log("nombre militants -----++++++++",nbr)
-                      tablemilitantmaps.push({id:region.slug,name:region.nom_region,nombre:nbr,"fill": am4core.color(nbr>0?"#fb4c07":"#fff")})
+                      tablemilitantmaps.push({id:region.slug,name:region.nom_region,nombre:nbr,"fill": am4core.color(nbr>0?"#d79b06":"#fff")})
                       //console.log("table militants -----++++++++",tablemilitantmaps)
                     })
 

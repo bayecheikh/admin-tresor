@@ -11,9 +11,9 @@
    
     {
       "icon": "mdi-account-group-outline",
-      "href": "/parrainages/importerParrainage",
-      "title": "Transfert de masse",
-      "name": "importer-parrainages"
+      "href": "/annuaires",
+      "title": "Paiement de masse",
+      "name": "gerer-annuaires"
     },
     
     {

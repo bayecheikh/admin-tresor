@@ -3,11 +3,11 @@
     <!-- <div class="custom-container bg-title-grey">
         <page-header :items="headerItems" class=""></page-header>  
     </div>  -->
-    <div class="custom-container mt-3 d-flex flex-row-reverse">
+    <!-- <div class="custom-container mt-3 d-flex flex-row-reverse">
           <v-btn depressed class="mr-0 text-white " color="green" @click="GotoAddannuaire">
             Ajouter des contacts
           </v-btn>     
-    </div> 
+    </div>  -->
     <div class="custom-container mt-3">
       <v-card class="container" flat>  
         <recherche-avance></recherche-avance>

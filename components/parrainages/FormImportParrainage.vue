@@ -7,7 +7,7 @@
               <template>
                 <v-file-input
                   accept=".xlsx"
-                  label="Importer des bénéficiaire (xlsx)"
+                  label="Importer des bénéficiaires (excel)"
                   outlined
                   v-model="selectXlsx"
                   show-size
@@ -131,7 +131,7 @@ import * as XLSX from 'xlsx'
             reader.readAsBinaryString(this.selectXlsx);
           }
           this.selectXlsx = null;
-        },
+      },
       submitForm () {   
         
         alert("Liste envoyée")

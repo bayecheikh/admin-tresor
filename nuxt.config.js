@@ -12,7 +12,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'TRESOR',
+    title: 'DGCPT - DIGIPAY',
     htmlAttrs: {
       lang: 'fr'
     },

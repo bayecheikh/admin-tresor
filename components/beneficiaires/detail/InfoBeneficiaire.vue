@@ -9,7 +9,7 @@
               <img :src="detailBeneficiaire.avatar" alt="Avatar"/>
             </v-avatar>
             <v-avatar size="100px" v-else>
-              <img src="@/static/avatar/default-user.png" alt="Cheikh Gueye"/>
+              <img src="@/static/avatar/default-user.png" alt="Avatar"/>
             </v-avatar>
           </div>
         </v-col>
@@ -23,16 +23,8 @@
               </div>
               <div class="col-md-6 border-left">              
                 <p class="info-profil mb-4"><span>Téléphone : </span>{{detailBeneficiaire.telephone_beneficiaire}}</p>
-                <p class="info-profil mb-4"><span>Région : </span>
-                  <v-chip
-                    color="primary"
-                    small
-                    outlined
-                    class="my-1 mr-1"
-                    v-for="region in detailBeneficiaire.region"  :key="region.id"
-                  >
-                    {{ region.nom_region }}
-                  </v-chip>
+                <p class="info-profil mb-4"><span>Numéro CNI : </span>{{ detailBeneficiaire.numero_cin }}
+                 
                 </p>
               </div>
           </div>

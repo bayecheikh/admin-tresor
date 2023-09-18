@@ -39,13 +39,13 @@ import { mapActions} from 'vuex'
         selectedItem: 0,
         leftmenuItems: [
           { text: 'Ajouter un beneficiaire', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
-          { text: 'Liste des beneficiaires', icon: 'mdi-account-group-outline',link:'/beneficiaires',position:1  },
+          { text: 'Liste des bénéficiaires', icon: 'mdi-account-group-outline',link:'/beneficiaires',position:1  },
           /* { text: 'Liste des roles', icon: 'mdi-lock',link:'/roles',position:1  }, */
           /* { text: 'Liste des permissions', icon: 'mdi-lock',link:'/permissions',position:1  } */
         ],
         headerItems: [
           {
-            text: 'Liste des beneficiaires',
+            text: 'Liste des bénéficiaires',
             disabled: true,
             to: '/beneficiaires',
             exact: true

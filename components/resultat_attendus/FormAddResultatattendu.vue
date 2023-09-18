@@ -273,7 +273,7 @@ import { mapMutations, mapGetters } from 'vuex'
           
           validation && this.$msasFileApi.post('/resultat_attendus',formData)
             .then((res) => {           
-              console.log('Donées reçus ++++++: ',res.data)
+              console.log('Données reçus ++++++: ',res.data)
               this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
               this.$router.push('/resultat_attendus');
             })

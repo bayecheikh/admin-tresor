@@ -453,7 +453,7 @@ import { mapMutations, mapGetters } from 'vuex'
           
           validation && this.$msasFileApi.post('/cible_fins',formData)
             .then((res) => {           
-              console.log('Donées reçus ++++++: ',res.data)
+              console.log('Données reçus ++++++: ',res.data)
               this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
               this.$router.push('/cible_fin_projets');
             })

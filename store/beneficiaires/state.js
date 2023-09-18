@@ -14,7 +14,7 @@ export default () => ({
         { text: 'Téléphone', value: 'telephone_beneficiaire' },
         { text: 'Adresse', value: 'adresse_beneficiaire' },
         /* { text: 'Telephone', value: 'telephone' }, */
-        { text: 'Commune', value: 'commune' },
+        // { text: 'Commune', value: 'commune' },
         { text: 'Actions', value: 'actions', sortable: false },
     ],
     detailbeneficiaire :{},

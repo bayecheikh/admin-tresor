@@ -2,21 +2,21 @@
   <v-card class="custom-card-user border-grey">                   
     <v-tabs horizontal class="bg-grey">
       <v-tab class="text-left">
-        Projets
+        Transactions
       </v-tab>
       <v-tab-item>
-        <table-projet :tab="'tout'"></table-projet>
+        <table-transaction :tab="'tout'"></table-transaction>
       </v-tab-item>
     </v-tabs>
   </v-card>
 </template>
 
 <script>
-import TableProjet from '@/components/beneficiaires/detail/TableProjet'
+import TableTransaction from '@/components/beneficiaires/detail/TableTransaction'
 import { mapMutations, mapGetters } from 'vuex'
   export default {
     components: {
-      TableProjet,
+      TableTransaction,
     },
     computed: mapGetters({
       detailBeneficiaire: 'beneficiaires/detailbeneficiaire',

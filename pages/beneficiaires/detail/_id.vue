@@ -45,17 +45,17 @@ import HistoriqueBeneficiaire from '@/components/beneficiaires/detail/Historique
       return {
         leftmenuItems: [
           { text: 'Ajouter un beneficiaire', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
-          { text: 'Liste des beneficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
+          { text: 'Liste des bénéficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
         ],
         headerItems: [
         {
-          text: 'Beneficiaires',
+          text: 'Bénéficiaires',
           disabled: false,
           to: '/beneficiaires',
           exact: true
         },
         {
-          text: 'Detail beneficiaire',
+          text: 'Détail bénéficiaire',
           disabled: true,
           to: '/beneficiaires/94',
           exact: true

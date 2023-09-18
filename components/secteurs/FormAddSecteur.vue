@@ -102,7 +102,7 @@ import { mapMutations, mapGetters } from 'vuex'
         this.loading = true;
         let validation = this.$refs.form.validate()
         let selectedsous_secteurs = this.selected.map((item)=>{return item.id})
-        console.log('Donées formulaire ++++++ : ',{...this.model,sous_secteurs:selectedsous_secteurs})
+        console.log('Données formulaire ++++++ : ',{...this.model,sous_secteurs:selectedsous_secteurs})
         
         validation && this.$msasApi.post('/secteurs', {...this.model,sous_secteurs:selectedsous_secteurs})
           .then((res) => {    

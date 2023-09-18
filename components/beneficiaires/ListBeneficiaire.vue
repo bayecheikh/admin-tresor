@@ -16,7 +16,7 @@
           <v-icon left>
             mdi-plus
           </v-icon>
-          Nouveau beneficiaire
+          Nouveau bénéficiaire
         </v-btn>
       </div>
     </div>

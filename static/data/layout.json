@@ -16,14 +16,14 @@
     },
     {
       "icon": "mdi-account-group-outline",
-      "href": "/projets",
-      "title": "Projets",
-      "name": "gerer-projets"
+      "href": "/transactions",
+      "title": "Transactions",
+      "name": "gerer-transactions"
     },
     {
       "icon": "mdi-account-group-outline",
-      "href": "/type_militants",
-      "title": "Types de membre",
+      "href": "/operateurs",
+      "title": "Opérateurs de paiement",
       "name": "gerer-parametres"
     },
     {
@@ -42,7 +42,7 @@
     {
       "icon": "mdi-account-lock-outline",
       "href": "/parametres",
-      "title": "Parametres",
+      "title": "Paramètres",
       "name": "gerer-parametres"
     }
   ]

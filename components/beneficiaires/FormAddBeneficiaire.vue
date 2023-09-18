@@ -35,7 +35,7 @@
           :rules="rules.textfieldRules"
         ></v-text-field>
       </v-col>
-      <v-col lg="4" md="4" sm="12">
+      <!-- <v-col lg="4" md="4" sm="12">
         <v-autocomplete
           v-model="region"
           :rules="rules.selectRules"
@@ -79,8 +79,8 @@
           @change="changeCommune"
         >
         </v-autocomplete>
-      </v-col>
-      <v-col md="6" lg="6" sm="12">
+      </v-col> -->
+      <v-col md="12" lg="12" sm="12">
         <v-text-field
           label="Adresse"
           outlined dense
@@ -127,11 +127,11 @@ import { mapMutations, mapGetters } from 'vuex'
       region:null,
 
       model: {
-        numero_cin:'111111',
-        nom_beneficiaire:'gueye',
-        prenom_beneficiaire:'cheikh',
-        adresse_beneficiaire:'thies',
-        telephone_beneficiaire:'778688784'
+        numero_cin:'',
+        nom_beneficiaire:'',
+        prenom_beneficiaire:'',
+        adresse_beneficiaire:'',
+        telephone_beneficiaire:''
       },
       rules:{
         textfieldRules: [],
@@ -163,7 +163,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
         validation && this.$msasApi.post('/beneficiaires',{...this.model,commune:[this.commune],departement:[this.departement],region:[this.region]})
           .then((res) => {           
-            console.log('Donées reçus ++++++: ',res.data)
+            console.log('Données reçus ++++++: ',res.data)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
             this.$router.push('/beneficiaires');
           })

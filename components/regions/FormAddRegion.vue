@@ -139,7 +139,7 @@ import { mapMutations, mapGetters } from 'vuex'
         this.loading = true;
         let validation = this.$refs.form.validate()
         let selecteddepartements = this.selected.map((item)=>{return item.id})
-        console.log('Donées formulaire ++++++ : ',{...this.model,departements:selecteddepartements})
+        console.log('Données formulaire ++++++ : ',{...this.model,departements:selecteddepartements})
         
         validation && this.$msasApi.post('/regions', {...this.model,departements:selecteddepartements})
           .then((res) => {    

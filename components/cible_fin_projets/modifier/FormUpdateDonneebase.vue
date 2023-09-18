@@ -417,7 +417,7 @@ import { mapMutations, mapGetters } from 'vuex'
           
           validation && this.$msasFileApi.post('/cible_fins/'+this.$nuxt._route.params.id,formData)
             .then((res) => {           
-              console.log('Donées modif reçus ++++++: ',res.data)
+              console.log('Données modif reçus ++++++: ',res.data)
               this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
              this.$router.push('/cible_fin_projets');
             })

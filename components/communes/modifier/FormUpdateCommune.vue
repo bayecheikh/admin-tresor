@@ -101,7 +101,7 @@ import { mapMutations, mapGetters } from 'vuex'
       submitForm () {
         this.loading = true;
         let validation = this.$refs.form.validate()
-        console.log('Donées formulaire ++++++ : ',{...this.model})
+        console.log('Données formulaire ++++++ : ',{...this.model})
         this.loading = false;
         
         validation && this.$msasApi.put('/communes/'+this.model.id, {...this.model})

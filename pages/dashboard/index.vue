@@ -2,7 +2,7 @@
   <div class="custom-container mt-5 "> 
     <v-tabs v-model="tab">
           <!-- <v-tab class="text-normal"> Cartographie des militants</v-tab> -->
-          <v-tab class="text-normal"> Statistique des transactions</v-tab>
+          <v-tab class="text-normal"> Statistiques des transactions</v-tab>
     </v-tabs>
     <v-tabs-items v-model="tab"> 
       <!-- <v-tab-item class="custom-container mt-0">  

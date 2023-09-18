@@ -278,7 +278,7 @@
 
         this.$msasApi.post('/recherche_avance_parrainages',formData)
           .then((response) => {
-            console.log('Donées reçus ++++++: ',response.data.data)
+            console.log('Données reçus ++++++: ',response.data.data)
            // this.listparrainages=response.data.data
            let uniq = {};
             const uniqueItems = response.data?.data?.filter(obj => !uniq[obj.numero_cedeao] && (uniq[obj.numero_cedeao] = true))

@@ -105,7 +105,7 @@ import { mapMutations, mapGetters } from 'vuex'
         let validation = this.$refs.form.validate()
         let selectedTypeannees = this.selected.map((item)=>{return item.id})
         let id = this.model.id
-        console.log('Donées formulaire ++++++ : ',{...this.model,type_annees:selectedTypeannees})
+        console.log('Données formulaire ++++++ : ',{...this.model,type_annees:selectedTypeannees})
         
         validation && this.$msasApi.put('/annees/'+id, {...this.model,type_annees:selectedTypeannees})
           .then((res) => {    

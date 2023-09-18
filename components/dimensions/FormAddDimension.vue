@@ -101,7 +101,7 @@ import { mapMutations, mapGetters } from 'vuex'
         this.loading = true;
         let validation = this.$refs.form.validate()
         let selectedModeFinancements = this.selected.map((item)=>{return item.id})
-        console.log('Donées formulaire ++++++ : ',{...this.model,ligne_modes:selectedModeFinancements})
+        console.log('Données formulaire ++++++ : ',{...this.model,ligne_modes:selectedModeFinancements})
         
         validation && this.$msasApi.post('/dimensions', {...this.model})
           .then((res) => {    

@@ -83,14 +83,14 @@ import { mapMutations, mapGetters } from 'vuex'
         this.loading = true;
         let validation = this.$refs.form.validate()
         let predefini = this.model.predefini==null?'0':'1'
-        console.log('Donées formulaire ++++++ : ',{...this.model,predefini:predefini})
+        console.log('Données formulaire ++++++ : ',{...this.model,predefini:predefini})
         this.loading = false;
         
         validation && this.$msasApi.put('/ligne_mode_investissements/'+this.model.id, {...this.model,predefini:predefini})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
             //this.$router.push('/modefinancements');
-            console.log('Donées reçu++++++ : ',res.data)
+            console.log('Données reçu++++++ : ',res.data)
           })
           .catch((error) => {
                console.log('Code error ++++++: ', error)

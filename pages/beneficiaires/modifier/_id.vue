@@ -36,17 +36,17 @@ import FormUpdateBeneficiaire from '@/components/beneficiaires/modifier/FormUpda
       return {
         leftmenuItems: [
           { text: 'Ajouter un beneficiaire', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
-          { text: 'Liste des beneficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
+          { text: 'Liste des bénéficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
         ],
         headerItems: [
         {
-          text: 'Beneficiaire',
+          text: 'Bénéficiaire',
           disabled: false,
           to: '/beneficiaires',
           exact: true
         },
         {
-          text: 'Detail beneficiaire',
+          text: 'Modifier bénéficiaire',
           disabled: true,
           to: '/beneficiaires/94',
           exact: true

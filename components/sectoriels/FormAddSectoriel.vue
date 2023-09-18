@@ -354,7 +354,7 @@ import { mapMutations, mapGetters } from 'vuex'
           
           validation && this.$msasFileApi.post('/sectoriels',formData)
             .then((res) => {           
-              console.log('Donées reçus ++++++: ',res.data)
+              console.log('Données reçus ++++++: ',res.data)
               this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
               this.$router.push('/sectoriels');
             })

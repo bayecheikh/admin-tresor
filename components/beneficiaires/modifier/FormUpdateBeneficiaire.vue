@@ -35,7 +35,7 @@
           :rules="rules.textfieldRules"
         ></v-text-field>
       </v-col>
-      <v-col lg="4" md="4" sm="12">
+      <!-- <v-col lg="4" md="4" sm="12">
         <v-autocomplete
           v-model="region"
           :rules="rules.selectRules"
@@ -79,8 +79,8 @@
           @change="changeCommune"
         >
         </v-autocomplete>
-      </v-col>
-      <v-col md="6" lg="6" sm="12">
+      </v-col> -->
+      <v-col md="12" lg="12" sm="12">
         <v-text-field
           label="Adresse"
           outlined dense
@@ -160,7 +160,7 @@ import { mapMutations, mapGetters } from 'vuex'
           this.progress=true
           this.$msasApi.$get('/beneficiaires/'+id)
         .then(async (response) => {
-            console.log('Detail beneficiaire ++++++++++',response.data)
+            console.log('Détail bénéficiaire ++++++++++',response.data)
             this.$store.dispatch('beneficiaires/getDetail',response.data)
 
             this.model.id= response.data.id
@@ -197,7 +197,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
         validation && this.$msasApi.put('/beneficiaires/'+this.model.id,{...this.model,commune:[this.commune],departement:[this.departement],region:[this.region]})
           .then((res) => {
-            console.log('Donées reçus ++++++: ',res.data)
+            console.log('Données reçus ++++++: ',res.data)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
             this.$router.push('/beneficiaires');
           })

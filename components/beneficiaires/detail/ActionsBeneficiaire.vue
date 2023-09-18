@@ -60,7 +60,7 @@ import { mapMutations, mapGetters } from 'vuex'
     methods: {
      submitForm () {
         let validation = this.$refs.form.validate()
-        console.log('Donées formulaire++++++: ',{...this.model,token:this.tokenTemporaire})
+        console.log('Données formulaire++++++: ',{...this.model,token:this.tokenTemporaire})
 
         this.loading = true;
         
@@ -68,7 +68,7 @@ import { mapMutations, mapGetters } from 'vuex'
           .then((res) => {    
             this.message = res.data.message
             this.color = 'success'
-            console.log('Donées reçus ++++++: ',res.data)
+            console.log('Données reçus ++++++: ',res.data)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
           })
           .catch((error) => {

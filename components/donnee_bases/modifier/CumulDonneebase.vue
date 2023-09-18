@@ -472,7 +472,7 @@
             
             validation && this.$msasFileApi.post('/donnee_bases',formData)
               .then((res) => {           
-                console.log('Donées reçus ++++++: ',res.data)
+                console.log('Données reçus ++++++: ',res.data)
                 this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
                 this.$router.push('/donnee_bases');
               })

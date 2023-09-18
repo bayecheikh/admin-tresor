@@ -119,7 +119,7 @@ import { mapMutations, mapGetters } from 'vuex'
         let validation = this.$refs.form.validate()
         let selectedPermissions = this.selected.map((item)=>{return item.id})
         let id = this.model.id
-        console.log('Donées formulaire ++++++ : ',{...this.model,permissions:selectedPermissions})
+        console.log('Données formulaire ++++++ : ',{...this.model,permissions:selectedPermissions})
         
         validation && this.$msasApi.put('/roles/'+id, {...this.model,permissions:selectedPermissions})
           .then((res) => {    

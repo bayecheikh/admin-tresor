@@ -478,7 +478,7 @@ export default {
     },
     valider () {
         this.loadingValidation = true;
-        console.log('Donées formulaire ++++++ : ',{id:this.detailsectoriel.id})
+        console.log('Données formulaire ++++++ : ',{id:this.detailsectoriel.id})
         
         this.$msasApi.post('/validation_sectoriel', {id:this.detailsectoriel.id})
           .then((res) => {  
@@ -486,7 +486,7 @@ export default {
             this.status = res.data.data.status  
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Validation réussie !'})
             this.$router.push('/sectoriels');
-            console.log('Donées formulaire reçu++++++ : ',res)
+            console.log('Données formulaire reçu++++++ : ',res)
           })
           .catch((error) => {
                console.log('Code error ++++++: ', error)
@@ -498,7 +498,7 @@ export default {
       },
       rejeter () {
         this.loadingRejet = true;
-        console.log('Donées formulaire ++++++ : ',{id:this.detailsectoriel.id})
+        console.log('Données formulaire ++++++ : ',{id:this.detailsectoriel.id})
         
         this.$msasApi.post('/rejet_sectoriel', {id:this.detailsectoriel.id,motif_rejet:this.model.motif})
           .then((res) => {  

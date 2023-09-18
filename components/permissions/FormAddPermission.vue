@@ -63,7 +63,7 @@ import Notification from '@/components/Notification'
       submitForm () {
         this.loading = true;
         let validation = this.$refs.form.validate()
-        console.log('Donées formulaire ++++++ : ',{...this.model})
+        console.log('Données formulaire ++++++ : ',{...this.model})
         
         validation && this.$msasApi.post('/permissions', {...this.model})
           .then((res) => {    

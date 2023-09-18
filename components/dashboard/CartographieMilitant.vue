@@ -67,13 +67,13 @@
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
          
               <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
-                <h4 class="">Nombre de bénéficiaire Wave</h4>
+                <h4 class="">Nombre de transactions Wave</h4>
                 <h2 class="text-primary mt-2">{{model.nombre_homme?model.nombre_homme.toLocaleString():0}}</h2>
               </div>             
         </div> 
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">        
               <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
-                <h4 class="">Nombre de bénéficiaire OM</h4>
+                <h4 class="">Nombre de transactions Orange Money</h4>
                 <h2 class="text-primary mt-2">{{model.nombre_femme?model.nombre_femme.toLocaleString():0}}</h2>
               </div>              
         </div>        
@@ -400,7 +400,7 @@
 
         this.$msasApi.post('/recherche_avance_parrainages',formData)
           .then(async (response) => {
-            console.log('Donées reçus ++++++: ',response.data)
+            console.log('Données reçus ++++++: ',response.data)
            // this.listparrainages=response.data.data
             this.$store.commit('parrainages/initlist',response.data.data)
             this.loading = false;

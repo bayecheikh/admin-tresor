@@ -84,7 +84,7 @@
                         Confirmation
                       </v-card-title>
                       <v-card-text
-                        >Voulez-vous supprimer cet element ?</v-card-text
+                        >Voulez-vous supprimer cet élément ?</v-card-text
                       >
                       <v-card-actions>
                         <v-spacer></v-spacer>

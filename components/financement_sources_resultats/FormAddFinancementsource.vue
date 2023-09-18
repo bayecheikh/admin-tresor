@@ -148,7 +148,7 @@ import { mapMutations, mapGetters } from 'vuex'
       submitForm () {
         this.loading = true;
         let validation = this.$refs.form.validate()
-        console.log('Donées formulaire ++++++ : ',{...this.model})
+        console.log('Données formulaire ++++++ : ',{...this.model})
         
         validation && this.$msasApi.post('/financement_sources', {...this.model})
           .then((res) => {    

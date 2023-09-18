@@ -137,7 +137,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
       valider () {
         this.loadingValidation = true;
-        console.log('Donées formulaire ++++++ : ',{id:this.detailinvestissement.id})
+        console.log('Données formulaire ++++++ : ',{id:this.detailinvestissement.id})
         
         this.$msasApi.post('/validation_investissement', {id:this.detailinvestissement.id})
           .then((res) => {  
@@ -157,7 +157,7 @@ import { mapMutations, mapGetters } from 'vuex'
       },
       rejeter () {
         this.loadingRejet = true;
-        console.log('Donées formulaire ++++++ : ',{id:this.detailinvestissement.id})
+        console.log('Données formulaire ++++++ : ',{id:this.detailinvestissement.id})
         
         this.$msasApi.post('/rejet_investissement', {id:this.detailinvestissement.id,motif_rejet:this.model.motif})
           .then((res) => {  

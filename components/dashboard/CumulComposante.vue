@@ -276,7 +276,7 @@
 
         this.$msasApi.post('/recherche_avance_parrainages',formData)
           .then((response) => {
-            console.log('Donées reçus ++++++: ',response.data.data)
+            console.log('Données reçus ++++++: ',response.data.data)
            // this.listparrainages=response.data.data
             this.$store.commit('parrainages/initlist',response.data.data)
             this.loading = false;

@@ -520,7 +520,7 @@ import { mapMutations, mapGetters } from 'vuex'
           type_zone_interventions : type_zone_interventions
         }
 
-        console.log('Donées formulaire source financements ++++++: ',data)
+        console.log('Données formulaire source financements ++++++: ',data)
 
         console.log('FormData ++++++ : ',formData)
 
@@ -528,7 +528,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
        validation && this.$msasFileApi.post('/structures/'+this.model.id,formData)
           .then((res) => {
-            console.log('Donées reçus ++++++: ',res)
+            console.log('Données reçus ++++++: ',res)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
             this.$router.push('/structures');
           })

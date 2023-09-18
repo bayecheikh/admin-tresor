@@ -10,9 +10,9 @@
             <v-col cols="12" md="12" lg="12" sm="12">
               <info-projet></info-projet>
             </v-col>
-            <v-col cols="12" md="12" lg="12" sm="12">
+            <!-- <v-col cols="12" md="12" lg="12" sm="12">
               <actions-projet></actions-projet>
-            </v-col>
+            </v-col> -->
           </v-row>      
     </v-card>
   </div> 

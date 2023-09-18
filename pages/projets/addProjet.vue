@@ -40,7 +40,7 @@ import FormAddProjet from '@/components/projets/FormAddProjet';
         ],
         headerItems: [
         {
-          text: 'Ajouter un projet',
+          text: 'Liste des projets',
           disabled: false,
           to: '/projets',
           exact: true

@@ -7,7 +7,7 @@
         </v-tabs>
       </div>
       <div class="ml-auto p-2">
-        <!--<v-btn
+        <v-btn
         depressed
         rounded
         color="primary"
@@ -17,7 +17,7 @@
             mdi-plus
           </v-icon>
           Nouveau beneficiaire
-        </v-btn>-->
+        </v-btn>
       </div>
     </div>
     

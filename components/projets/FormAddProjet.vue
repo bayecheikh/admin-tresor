@@ -3,6 +3,33 @@
   <v-form class="text-sm-center" v-model="valid" ref="form" enctype="multipart/form-data"
     >
     <v-row>
+      <v-col lg="12" md="12" sm="12">
+        <v-autocomplete
+          v-model="model.beneficiaire"
+          :rules="rules.selectRules"
+          :items="listbeneficiaires"
+          hide-no-data
+          :filter="() => true"
+          outlined
+          dense
+          label="Rechercher un bénéficiaire (Téléphone ou CNI)"
+          item-text="nom_beneficiaire"
+          item-value="id"
+          return-object
+          @keyup="(event) => UpdateBeneficiaire(event, index)"
+          @change="changeBeneficiaire"
+        >
+          <template v-slot:selection="data">
+            <h5>{{ data.item.prenom_beneficiaire+' '+data.item.nom_beneficiaire }}</h5>
+          </template>
+          <template v-slot:item="data">
+            <div class="mt-4">
+              <h5>{{ data.item.prenom_beneficiaire+' '+data.item.nom_beneficiaire }}</h5>
+              <p>Tel: {{ data.item.telephone_beneficiaire}}</p>
+            </div>
+          </template>
+        </v-autocomplete>
+      </v-col>
       <v-col md="6" lg="6" sm="12">
         <v-text-field
           label="Référence projet"
@@ -64,33 +91,7 @@
         >
         </v-autocomplete>
       </v-col>
-      <v-col lg="4" md="4" sm="12">
-        <v-autocomplete
-          v-model="model.beneficiaire"
-          :rules="rules.selectRules"
-          :items="listbeneficiaires"
-          hide-no-data
-          :filter="() => true"
-          outlined
-          dense
-          label="Bénéficiaire (Téléphone ou CNI)"
-          item-text="nom_beneficiaire"
-          item-value="id"
-          return-object
-          @keyup="(event) => UpdateBeneficiaire(event, index)"
-          @change="changeBeneficiaire"
-        >
-          <template v-slot:selection="data">
-            <h5>{{ data.item.prenom_beneficiaire+' '+data.item.nom_beneficiaire }}</h5>
-          </template>
-          <template v-slot:item="data">
-            <div class="mt-4">
-              <h5>{{ data.item.prenom_beneficiaire+' '+data.item.nom_beneficiaire }}</h5>
-              <p>Tel: {{ data.item.telephone_beneficiaire}}</p>
-            </div>
-          </template>
-        </v-autocomplete>
-      </v-col>
+     
     </v-row>
 
     <v-btn

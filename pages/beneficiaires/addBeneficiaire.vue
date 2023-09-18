@@ -35,12 +35,12 @@ import FormAddBeneficiaire from '@/components/beneficiaires/FormAddBeneficiaire'
     data () {
       return {
         leftmenuItems: [
-          { text: 'Ajouter un beneficiaire', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
+          { text: 'Liste des bénéficiaires', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
           { text: 'Liste des beneficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
         ],
         headerItems: [
         {
-          text: 'Ajouter un beneficiaire',
+          text: 'Liste des bénéficiaires',
           disabled: false,
           to: '/beneficiaires',
           exact: true

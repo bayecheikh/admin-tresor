@@ -35,7 +35,7 @@ import FormUpdateTypemilitant from '@/components/type_militants/modifier/FormUpd
         ],
         headerItems: [
         {
-          text: 'Type années',
+          text: 'Type militant',
           disabled: false,
           to: '/type_militants',
           exact: true

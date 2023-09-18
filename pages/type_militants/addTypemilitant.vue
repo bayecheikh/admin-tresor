@@ -35,7 +35,7 @@ import FormAddTypemilitant from '@/components/type_militants/FormAddTypemilitant
         ],
         headerItems: [
         {
-          text: 'Types années',
+          text: 'Types militant',
           disabled: false,
           to: '/type_militants',
           exact: true

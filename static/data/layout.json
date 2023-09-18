@@ -8,7 +8,24 @@
       "title": "Tableau de bord",
       "name":"voir-dashboard"
     },
-   
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/beneficiaires",
+      "title": "Bénéficiaires",
+      "name": "gerer-beneficiaires"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/projets",
+      "title": "Projets",
+      "name": "gerer-projets"
+    },
+    {
+      "icon": "mdi-account-group-outline",
+      "href": "/type_militants",
+      "title": "Types de membre",
+      "name": "gerer-parametres"
+    },
     {
       "icon": "mdi-account-group-outline",
       "href": "/annuaires",

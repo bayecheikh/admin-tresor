@@ -11,28 +11,28 @@
         depressed
         rounded
         color="primary"
-        @click="goToAddOperateur"
+        @click="goToAddPaiement"
         >
           <v-icon left>
             mdi-plus
           </v-icon>
-          Nouvel opérateur de paiement
+          Nouveau paiement
         </v-btn>
       </div>
     </div>
     
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabItems"  :key="item.value" >
-          <table-operateur :tab="item.value"></table-operateur> 
+          <table-paiement :tab="item.value"></table-paiement> 
       </v-tab-item>          
     </v-tabs-items>
   </div>
 </template>
 <script>
-import TableOperateur from '@/components/operateurs/TableOperateur'
+import TablePaiement from '@/components/paiements/TablePaiement'
   export default {
     components: {
-      TableOperateur
+      TablePaiement
     },
     data: () => ({
       tab: null,
@@ -42,8 +42,8 @@ import TableOperateur from '@/components/operateurs/TableOperateur'
       selected: []
     }),
     methods:{
-      goToAddOperateur() {      
-        this.$router.push('/operateurs/addOperateur');
+      goToAddPaiement() {      
+        this.$router.push('/paiements/addPaiement');
       },
     }
   }

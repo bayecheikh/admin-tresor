@@ -184,7 +184,15 @@ import { mapMutations, mapGetters } from 'vuex'
       Notification
     },
     mounted: function() {
+      console.log("AAAAA6+++++++++++", this.$route.query.beneficiaire)
+      if(this.$route.query.beneficiaire){
+       this.changeBeneficiaire(this.$route.query.beneficiaire)
+      }
+      else{
+        this.beneficiaire = null
+      }
       this.getRegions()
+
     },
     computed: {
     },
@@ -203,7 +211,7 @@ import { mapMutations, mapGetters } from 'vuex'
       objet_libelle_paiement: null,
       libelle_paiement:null,
       region:null,
-      beneficiaire:null,
+      
 
       model: {
         prenom_beneficiaire: '',

@@ -64,22 +64,23 @@ import Notification from '@/components/Notification'
         this.loading = true;
         let validation = this.$refs.form.validate()
         console.log('Données formulaire ++++++ : ',{...this.model})
-       
-        validation && this.$msasApi.post('/operateurs', {...this.model})
+        
+        
+        validation && this.$msasApi.post('/paiements', {...this.model})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
-            this.$router.push('/operateurs');
+            this.$router.push('/paiements');
             
           })
           .catch((error) => {
                console.log('Code error ++++++: ', error)
-              this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Échec de l\'ajout '})
+              this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Echec de l\'ajout '})
           }).finally(() => {
             this.loading = false;
             console.log('Requette envoyé ')
         });
       },
-   
+    
       resetForm () {
         this.$refs.form.reset()
       },

@@ -4,10 +4,18 @@
       <v-row>
         <v-col md="6" lg="6" sm="12">
           <v-text-field
-            label="Libelle"
+            label="Libellé"
             outlined dense
             v-model="model.libelle"
-            :rules="rules.nameRules"
+            :rules="rules.libelleRules"
+          ></v-text-field>
+        </v-col>
+        <v-col md="6" lg="6" sm="12">
+          <v-text-field
+            label="Slug"
+            outlined dense
+            v-model="model.slug"
+            :rules="rules.slugRules"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -42,12 +50,12 @@ import Notification from '@/components/Notification'
         slug: '',
       },
       rules:{
-        nameRules: [
-          v => !!v || 'Libelle est obligatoire',
-          v => (v && v.length <= 50) || 'Prénom doit etre inférieur à 20 caratères',
+        libelleRules: [
+          v => !!v || 'Le libellé est obligatoire',
+          v => (v && v.length <= 50) || 'Le libellé ne peut pas dépasser 50 caractères',
         ],
-        descriptionRules: [
-          v => !!v || 'Description est obligatoire'
+        slugRules: [
+          v => !!v || 'Le slug est obligatoire'
         ],
       },
     }),
@@ -56,9 +64,9 @@ import Notification from '@/components/Notification'
         this.loading = true;
         let validation = this.$refs.form.validate()
         console.log('Données formulaire ++++++ : ',{...this.model})
-        this.slug = this.slugify(this.libelle)
         
-        validation && this.$msasApi.post('/operateurs', {...this.model,slug:this.slug})
+        
+        validation && this.$msasApi.post('/operateurs', {...this.model})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
             this.$router.push('/operateurs');
@@ -72,14 +80,7 @@ import Notification from '@/components/Notification'
             console.log('Requette envoyé ')
         });
       },
-      slugify(str) {
-        str = str.replace(/^\s+|\s+$/g, ''); // trim leading/trailing white space
-        str = str.toLowerCase(); // convert string to lowercase
-        str = str.replace(/[^a-z0-9 -]/g, '') // remove any non-alphanumeric characters
-                .replace(/\s+/g, '-') // replace spaces with hyphens
-                .replace(/-+/g, '-'); // remove consecutive hyphens
-        return str;
-      },
+    
       resetForm () {
         this.$refs.form.reset()
       },

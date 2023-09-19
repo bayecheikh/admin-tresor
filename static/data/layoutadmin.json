@@ -20,12 +20,7 @@
       "title": "Permissions",
       "name": "gerer-parametres"
     },
-    {
-      "icon": "mdi-cog-outline",
-      "href": "/communes",
-      "title": "Communes",
-      "name": "gerer-parametres"
-    },
+  
     {
       "icon": "mdi-cog-outline",
       "href": "/operateurs",
@@ -34,14 +29,8 @@
     },
     {
       "icon": "mdi-cog-outline",
-      "href": "/departements",
-      "title": "Départements",
-      "name": "gerer-parametres"
-    },
-    {
-      "icon": "mdi-cog-outline",
-      "href": "/regions",
-      "title": "Régions",
+      "href": "/paiements",
+      "title": "Paiements",
       "name": "gerer-parametres"
     }
   ]

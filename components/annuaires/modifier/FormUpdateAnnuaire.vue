@@ -704,7 +704,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
        validation && this.$msasApi.post('/annuaires/'+this.model.id,formData)
           .then((res) => {
-            console.log('Données reçus ++++++: ',res)
+            console.log('Donées reçus ++++++: ',res)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
             this.$router.push('/annuaires')
             //this.resetInfoElecteur()

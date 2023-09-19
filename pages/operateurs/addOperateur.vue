@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container pl-10 pt-10 pb-10 pr-10" flat>  
-      <form-add-typemilitant></form-add-typemilitant>
+      <form-add-operateur></form-add-operateur>
     </v-card>
   </div> 
 </div>
@@ -14,13 +14,13 @@
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import FormAddTypemilitant from '@/components/operateurs/FormAddTypemilitant';
+import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
   export default {
     layout: "dashboard",
     components: {
       LeftMenu,
       PageHeader,
-      FormAddTypemilitant
+      FormAddOperateur
     },
     middleware: function ({redirect,$hasPermission,}) {
       if(!$hasPermission('gerer-parametres')){
@@ -30,8 +30,8 @@ import FormAddTypemilitant from '@/components/operateurs/FormAddTypemilitant';
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
-          { text: 'type_militants', icon: 'mdi-lock',link:'/operateurs',position:2  }
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
         ],
         headerItems: [
         {
@@ -43,7 +43,7 @@ import FormAddTypemilitant from '@/components/operateurs/FormAddTypemilitant';
         {
           text: 'Nouvel opérateur de paiement',
           disabled: false,
-          to: '/operateurs/addTypemilitant',
+          to: '/operateurs/addOperateur',
           exact: true
         }
         
@@ -56,7 +56,7 @@ import FormAddTypemilitant from '@/components/operateurs/FormAddTypemilitant';
         menu2: false,
         menu3: false,
         modal: false,
-        type_militants: ['Sperviseur national'],
+        operateurs : ['Sperviseur national'],
         localisations: ['Thiès','Dakar'],
 
       }

@@ -6,33 +6,33 @@
           <v-tab class="text-normal" v-for="item in tabItems" :key="item.value"> {{item.title}}</v-tab>
         </v-tabs>
       </div>
-      <div class="ml-auto p-2">
+      <!-- <div class="ml-auto p-2">
         <v-btn
         depressed
         rounded
         color="primary"
-        @click="goToAddtype_militant"
+        @click="goToAddannuaire"
         >
           <v-icon left>
             mdi-plus
           </v-icon>
-          Nouvel opérateur de paiement
+          Ajouter des contacts
         </v-btn>
-      </div>
+      </div> -->
     </div>
     
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabItems"  :key="item.value" >
-          <table-typemilitant :tab="item.value"></table-typemilitant> 
+          <table-annuaire :tab="item.value"></table-annuaire> 
       </v-tab-item>          
     </v-tabs-items>
   </div>
 </template>
 <script>
-import TableTypemilitant from '@/components/operateurs/TableTypemilitant'
+import TableAnnuaire from '@/components/annuaires/TableAnnuaire'
   export default {
     components: {
-      TableTypemilitant
+      TableAnnuaire
     },
     data: () => ({
       tab: null,
@@ -42,8 +42,8 @@ import TableTypemilitant from '@/components/operateurs/TableTypemilitant'
       selected: []
     }),
     methods:{
-      goToAddtype_militant() {      
-        this.$router.push('/operateurs/addTypemilitant');
+      goToAddannuaire() {      
+        this.$router.push('/annuaires/addAnnuaire');
       },
     }
   }

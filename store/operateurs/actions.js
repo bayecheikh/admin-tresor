@@ -1,6 +1,6 @@
 export default {
     getList({commit}){
-      this.$msasApi.$get('/type_militants')
+      this.$msasApi.$get('/operateurs')
       .then(async (response) => { 
         console.log('Données reçu+++++++++++',response)
             await commit('initlist', response.data)
@@ -15,7 +15,7 @@ export default {
       console.log('Données detail reçu +++++++++++',payload)
       await commit('initdetail', payload)
     },
-    async deletetype_militant({commit,dispatch},payload){
+    async deleteoperateur({commit,dispatch},payload){
       await commit('removeItem',payload) 
       
   }

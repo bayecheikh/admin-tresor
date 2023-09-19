@@ -57,7 +57,7 @@ import { mapMutations, mapGetters } from 'vuex'
     methods: {
       getDetail(id){
           this.progress=true
-          this.$msasApi.$get('/paiementdemasse/'+id)
+          this.$msasApi.$get('/annuaires/'+id)
         .then(async (response) => {
             this.$store.dispatch('annuaires/getDetail',response.data)
         }).catch((error) => {

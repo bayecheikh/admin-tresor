@@ -13,11 +13,11 @@
 </v-card-title>
 <v-data-table
   :headers="headers"
-  :items="listtype_militants"
+  :items="listoperateurs"
   item-key="id"
   items-per-page="5"
   class="flat pt-4"
-  :loading="listtype_militants.length<0?true:false"
+  :loading="listoperateurs.length<0?true:false"
   loading-text="Loading... Please wait"
   :rows-per-page-items="[10,20,30]"
   hide-default-footer
@@ -107,8 +107,8 @@
 import { mapMutations, mapGetters } from 'vuex'
   export default {
     computed: mapGetters({
-      listtype_militants: 'type_militants/listtype_militants',
-      headers: 'type_militants/headertype_militants'
+      listoperateurs: 'operateurs/listoperateurs',
+      headers: 'operateurs/headeroperateurs'
     }),
     props: ['tab'],
     metaInfo () {
@@ -118,19 +118,19 @@ import { mapMutations, mapGetters } from 'vuex'
     },
     methods: {
       visualiserItem (item) {   
-        this.$store.dispatch('type_militants/getDetail',item);
+        this.$store.dispatch('operateurs/getDetail',item);
         this.$router.push('/operateurs/detail/'+item.id);
       },
       editItem (item) {   
-        this.$store.dispatch('type_militants/getDetail',item);
+        this.$store.dispatch('operateurs/getDetail',item);
         this.$router.push('/operateurs/modifier/'+item.id);
       },
        deleteItem (item) {
         this.dialog=false   
         this.$store.dispatch('toast/getMessage',{type:'processing',text:'Traitement en cours ...'})
-        this.$msasApi.$delete('/type_militants/'+this.activeItem.id)
+        this.$msasApi.$delete('/operateurs/'+this.activeItem.id)
         .then(async (response) => { 
-            this.$store.dispatch('type_militants/deletetype_militant',this.activeItem.id)
+            this.$store.dispatch('operateurs/deleteoperateur',this.activeItem.id)
             this.$store.dispatch('toast/getMessage',{type:'success',text:response.data.message || 'Suppression réussie'})
             }).catch((error) => {
               this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Echec de la suppression'})
@@ -148,18 +148,18 @@ import { mapMutations, mapGetters } from 'vuex'
         if(this.selected.length!=1)
         alert('Veuillez selectionner un element')
         else{
-          let type_militant = this.selected.map(function(value){ return value})[0]
-          this.$store.commit('type_militants/initdetail',type_militant)
-          this.$router.push('/operateurs/detail/'+type_militant.id);
+          let operateur = this.selected.map(function(value){ return value})[0]
+          this.$store.commit('operateurs/initdetail',operateur)
+          this.$router.push('/operateurs/detail/'+operateur.id);
         }
       },
       modifier(){
         if(this.selected.length!=1)
         alert('Veuillez selectionner un element')
         else{
-          let type_militant = this.selected.map(function(value){ return value})[0]
-          this.$store.commit('type_militants/initdetail',type_militant)
-          this.$router.push('/operateurs/modifier/'+type_militant.id);
+          let operateur = this.selected.map(function(value){ return value})[0]
+          this.$store.commit('operateurs/initdetail',operateur)
+          this.$router.push('/operateurs/modifier/'+operateur.id);
         }
       },
       supprimer(){

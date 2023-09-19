@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container" flat>  
-      <list-typemilitant></list-typemilitant>
+      <list-operateur></list-operateur>
     </v-card>
   </div> 
 </div>
@@ -14,7 +14,7 @@
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import ListTypemilitant from '@/components/operateurs/ListTypemilitant'
+import ListOperateur from '@/components/operateurs/ListOperateur'
   export default {
     layout: "dashboard",
     middleware: function ({redirect,$hasPermission}) {
@@ -25,17 +25,17 @@ import ListTypemilitant from '@/components/operateurs/ListTypemilitant'
     components: {
       LeftMenu,
       PageHeader,
-      ListTypemilitant
+      ListOperateur
     },
     mounted: function() {
-      this.$store.dispatch('type_militants/getList')
+      this.$store.dispatch('operateurs/getList')
     },
     data () {
       return {
         selectedItem: 0,
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
-          { text: 'type_militants', icon: 'mdi-lock',link:'/operateurs',position:2  }
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
         ],
         headerItems: [
           {

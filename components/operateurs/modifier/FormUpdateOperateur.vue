@@ -58,7 +58,7 @@ import Notification from '@/components/Notification'
         console.log('Données formulaire ++++++ : ',{...this.model})
         this.slug = this.slugify(this.libelle)
         
-        validation && this.$msasApi.post('/type_militants', {...this.model,slug:this.slug})
+        validation && this.$msasApi.post('/operateurs', {...this.model,slug:this.slug})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
             this.$router.push('/operateurs');

@@ -19,7 +19,7 @@ A<template>
 
 <script>
 import PageHeader from '@/components/PageHeader';
-import InfoAnnuaire from '@/components/paiementdemasse/detail/InfoAnnuaire';
+import InfoAnnuaire from '@/components/annuaires/detail/InfoAnnuaire';
 
   export default {
     layout: "dashboard",
@@ -48,7 +48,7 @@ import InfoAnnuaire from '@/components/paiementdemasse/detail/InfoAnnuaire';
         {
           text: 'Detail annuaire',
           disabled: true,
-          to: '/paiementdemasse/94',
+          to: '/annuaires/94',
           exact: true
         }
         

@@ -13,7 +13,7 @@ A<template>
 
 <script>
 import PageHeader from '@/components/PageHeader';
-import FormUpdateAnnuaire from '@/components/paiementdemasse/modifier/FormUpdateAnnuaire';
+import FormUpdateAnnuaire from '@/components/annuaires/modifier/FormUpdateAnnuaire';
   export default {
     layout: "dashboard",
     components: {
@@ -43,7 +43,7 @@ import FormUpdateAnnuaire from '@/components/paiementdemasse/modifier/FormUpdate
         {
           text: 'Modification membre',
           disabled: true,
-          to: '/paiementdemasse/94',
+          to: '/annuaires/94',
           exact: true
         }
         

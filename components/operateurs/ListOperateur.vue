@@ -6,33 +6,33 @@
           <v-tab class="text-normal" v-for="item in tabItems" :key="item.value"> {{item.title}}</v-tab>
         </v-tabs>
       </div>
-      <!-- <div class="ml-auto p-2">
+      <div class="ml-auto p-2">
         <v-btn
         depressed
         rounded
         color="primary"
-        @click="goToAddannuaire"
+        @click="goToAddoperateur"
         >
           <v-icon left>
             mdi-plus
           </v-icon>
-          Ajouter des contacts
+          Nouvel opérateur de paiement
         </v-btn>
-      </div> -->
+      </div>
     </div>
     
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in tabItems"  :key="item.value" >
-          <table-annuaire :tab="item.value"></table-annuaire> 
+          <table-operateur :tab="item.value"></table-operateur> 
       </v-tab-item>          
     </v-tabs-items>
   </div>
 </template>
 <script>
-import TableAnnuaire from '@/components/paiementdemasse/TableAnnuaire'
+import TableOperateur from '@/components/operateurs/TableOperateur'
   export default {
     components: {
-      TableAnnuaire
+      TableOperateur
     },
     data: () => ({
       tab: null,
@@ -42,8 +42,8 @@ import TableAnnuaire from '@/components/paiementdemasse/TableAnnuaire'
       selected: []
     }),
     methods:{
-      goToAddannuaire() {      
-        this.$router.push('/paiementdemasse/addAnnuaire');
+      goToAddoperateur() {      
+        this.$router.push('/operateurs/addOperateur');
       },
     }
   }

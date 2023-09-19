@@ -8,7 +8,7 @@
         <v-col md="9" sm="12" lg="9" text-md-left>
           <div class="row">
               <div class="col-md-6 border-left">
-                  <h3 class="mb-4">{{detailtype_annee.libelle}}</h3>
+                  <h3 class="mb-4">{{detailoperateur.libelle}}</h3>
                   
               </div>
           </div>
@@ -22,7 +22,7 @@
 import { mapMutations, mapGetters } from 'vuex'
   export default {
     computed: mapGetters({
-      detailtype_annee: 'type_annees/detailtype_annee'
+      detailoperateur: 'operateurs/detailoperateur'
     }),
     data: () => ({
 
@@ -32,7 +32,7 @@ import { mapMutations, mapGetters } from 'vuex'
         alert('Formulaire soumis')
       },
       retour(){       
-          this.$router.push('/type_annees');
+          this.$router.push('/operateurs');
       },
     },
   }

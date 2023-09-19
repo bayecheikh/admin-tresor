@@ -1,7 +1,7 @@
 export default () => ({
-    listtype_militants: [],
+    listoperateurs: [],
 
-    headertype_militants : [
+    headeroperateurs : [
         {
             text: 'Libelle',
             align: 'start',
@@ -17,5 +17,5 @@ export default () => ({
         /* { text: 'Status', value: 'status' }, */
         { text: 'Actions', value: 'actions', sortable: false },
     ],
-    detailtype_militant :{}
+    detailoperateur :{}
 })

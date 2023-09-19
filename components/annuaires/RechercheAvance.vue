@@ -132,7 +132,7 @@ import * as XLSX from 'xlsx'
 
           this.$msasApi.post('/sendSms',formData)
             .then((response) => {
-              console.log('Données reçus ++++++: ',response.data.data)
+              console.log('Donées reçus ++++++: ',response.data.data)
             
               this.$store.dispatch('toast/getMessage',{type:'success',text:'Votre message a été envoyé avec succès'})
             })

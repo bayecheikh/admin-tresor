@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container pl-10 pt-10 pb-10 pr-10" flat>  
-      <form-update-typemilitant></form-update-typemilitant>
+      <form-update-operateur></form-update-operateur>
     </v-card>
   </div> 
 </div>
@@ -14,13 +14,13 @@
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import FormUpdateTypemilitant from '@/components/operateurs/modifier/FormUpdateTypemilitant';
+import FormUpdateOperateur from '@/components/operateurs/modifier/FormUpdateOperateur';
   export default {
     layout: "dashboard",
     components: {
       LeftMenu,
       PageHeader,
-      FormUpdateTypemilitant
+      FormUpdateOperateur
     },
     middleware: function ({redirect,$hasPermission}) {
       if(!$hasPermission('gerer-parametres')){
@@ -31,17 +31,17 @@ import FormUpdateTypemilitant from '@/components/operateurs/modifier/FormUpdateT
       return {
         leftmenuItems: [
           { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
-          { text: 'type_militants', icon: 'mdi-lock',link:'/operateurs',position:2  }
+          { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
         ],
         headerItems: [
         {
-          text: 'Type militant',
+          text: 'Opérateur',
           disabled: false,
           to: '/operateurs',
           exact: true
         },
         {
-          text: 'Detail type militant',
+          text: 'Détail opérateur',
           disabled: true,
           to: '/operateurs/94',
           exact: true
@@ -56,7 +56,7 @@ import FormUpdateTypemilitant from '@/components/operateurs/modifier/FormUpdateT
         menu2: false,
         menu3: false,
         modal: false,
-        type_militants: ['Sperviseur national'],
+        operateurs: ['Sperviseur national'],
         localisations: ['Thiès','Dakar'],
 
       }

@@ -34,7 +34,7 @@
 import { mapMutations, mapGetters } from 'vuex'
   export default {
     computed: mapGetters({
-      detailtype_annee: 'type_annees/detailtype_annee'
+      detailoperateur: 'operateurs/detailoperateur'
     }),
     data: () => ({
 
@@ -44,10 +44,10 @@ import { mapMutations, mapGetters } from 'vuex'
         alert('Formulaire soumis')
       },
       retour(){       
-        this.$router.push('/type_annees');
+        this.$router.push('/operateurs');
       },
       modifier(){ 
-        this.$router.push('/type_annees/modifier/'+this.detailtype_annee.id);      
+        this.$router.push('/operateurs/modifier/'+this.detailoperateur.id);      
       },
       reinitialiser(){  
         alert('Réinitialiser mot de passe')     

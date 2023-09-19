@@ -24,8 +24,8 @@
 
 <script>
 import PageHeader from '@/components/PageHeader';
-import TableAnnuaire from '@/components/paiementdemasse/TableAnnuaire'
-import RechercheAvance from '@/components/paiementdemasse/RechercheAvance'
+import TableAnnuaire from '@/components/annuaires/TableAnnuaire'
+import RechercheAvance from '@/components/annuaires/RechercheAvance'
 import { mapActions} from 'vuex'
   export default {
     layout: "dashboard",
@@ -54,7 +54,7 @@ import { mapActions} from 'vuex'
     },
     methods:{
       GotoAddannuaire() {
-        this.$router.push('/paiementdemasse/addAnnuaire');
+        this.$router.push('/annuaires/addAnnuaire');
       }
     }
   }

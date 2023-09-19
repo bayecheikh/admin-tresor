@@ -14,8 +14,8 @@ A<template>
 
 <script>
 import PageHeader from '@/components/PageHeader';
-import TableAnnuaire from '@/components/paiementdemasse/TableAnnuaire'
-import FormAddAnnuaire from '@/components/paiementdemasse/FormAddAnnuaire'
+import TableAnnuaire from '@/components/annuaires/TableAnnuaire'
+import FormAddAnnuaire from '@/components/annuaires/FormAddAnnuaire'
 import { mapActions} from 'vuex'
   export default {
     layout: "dashboard",

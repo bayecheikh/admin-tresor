@@ -52,7 +52,7 @@
       <v-dialog v-model="dialog" width="500">
         <v-card>
           <v-card-title class="text-h5"> Confirmation </v-card-title>
-          <v-card-text>Voulez-vous supprimer cet élément ?</v-card-text>
+          <v-card-text>Voulez-vous supprimer cet element ?</v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn
@@ -282,7 +282,7 @@ import { mapMutations, mapGetters } from 'vuex'
 
        this.$msasApi.post('/recherche_avance_annuaires',formData)
           .then((response) => {
-            console.log('Données reçus ++++++: ',response.data.data)
+            console.log('Donées reçus ++++++: ',response.data.data)
            // this.listannuaires=response.data.data
             this.$store.commit('annuaires/initlist',response.data.data)
             this.loading = false;
@@ -306,11 +306,11 @@ import { mapMutations, mapGetters } from 'vuex'
       },
       visualiserItem (item) {   
         this.$store.dispatch('annuaires/getDetail',item)
-        this.$router.push('/paiementdemasse/detail/'+item.id);
+        this.$router.push('/annuaires/detail/'+item.id);
       },
       editItem (item) {   
         this.$store.dispatch('annuaires/getDetail',item)
-        this.$router.push('/paiementdemasse/modifier/'+item.id);
+        this.$router.push('/annuaires/modifier/'+item.id);
       },
        deleteItem (item) {
         this.dialog=false   
@@ -337,7 +337,7 @@ import { mapMutations, mapGetters } from 'vuex'
         else{
           let annuaire = this.selected.map(function(value){ return value})[0]
           this.$store.commit('annuaires/initdetail',annuaire)
-          this.$router.push('/paiementdemasse/detail/'+annuaire.id);
+          this.$router.push('/annuaires/detail/'+annuaire.id);
         }
       },
       modifier(){
@@ -346,7 +346,7 @@ import { mapMutations, mapGetters } from 'vuex'
         else{
           let annuaire = this.selected.map(function(value){ return value})[0]
           this.$store.commit('annuaires/initdetail',annuaire)
-          this.$router.push('/paiementdemasse/modifier/'+annuaire.id);
+          this.$router.push('/annuaires/modifier/'+annuaire.id);
         }
       },
       supprimer(){

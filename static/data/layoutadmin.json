@@ -28,6 +28,12 @@
     },
     {
       "icon": "mdi-cog-outline",
+      "href": "/operateurs",
+      "title": "Opérateurs de paiement",
+      "name": "gerer-parametres"
+    },
+    {
+      "icon": "mdi-cog-outline",
       "href": "/departements",
       "title": "Départements",
       "name": "gerer-parametres"

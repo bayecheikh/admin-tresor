@@ -123,16 +123,18 @@
     <v-btn
       :loading="loadingbrouillon"
       :disabled="!validBrouillon"
-      class="mr-4 text-white" color="blue"
+      class="mr-4 text-white" color="black"
       @click="enregistrerBrouillon"
+      depressed
     >
       Enregistrer comme brouillon 
     </v-btn>
     <v-btn
       :loading="loadingsoumettre"
       :disabled="!validSoumettre"
-      class="mr-4 text-white" color="green"
+      class="mr-4 text-white" color="primary"
       @click="soumettreDemande"
+      depressed
     >
       Soumettre la demande
     </v-btn>
@@ -222,14 +224,14 @@ import { mapMutations, mapGetters } from 'vuex'
       submitForm () {
         let validation = this.$refs.form.validate()
        
-        this.model.user_id = parseInt(this.loggedInUser.id)
-        this.model.montant = parseInt(this.model.montant)
-        this.model.id_operateur = this.objet_libelle_operateur.id
-        this.model.libelle_operateur = this.objet_libelle_operateur.libelle
-        this.model.slug_operateur = this.objet_libelle_operateur.slug
-        this.model.id_paiement = this.objet_libelle_paiement.id
-        this.model.libelle_paiement = this.objet_libelle_paiement.libelle
-        this.model.slug_paiement = this.objet_libelle_paiement.slug
+        this.model.user_id = parseInt(this.loggedInUser?.id)
+        this.model.montant = parseInt(this.model?.montant)
+        this.model.id_operateur = this.objet_libelle_operateur?.id
+        this.model.libelle_operateur = this.objet_libelle_operateur?.libelle
+        this.model.slug_operateur = this.objet_libelle_operateur?.slug
+        this.model.id_paiement = this.objet_libelle_paiement?.id
+        this.model.libelle_paiement = this.objet_libelle_paiement?.libelle
+        this.model.slug_paiement = this.objet_libelle_paiement?.slug
 
         console.log('Données formulaire +++++',{...this.model})
      
@@ -301,8 +303,8 @@ import { mapMutations, mapGetters } from 'vuex'
         });
       },  
       async changeBeneficiaire(value) {      
-        this.beneficiaire = value.id
-        value && value.id &&  this.$msasApi.$get('/beneficiaires/'+value.id)
+        this.beneficiaire = value?.id
+        value && value?.id &&  this.$msasApi.$get('/beneficiaires/'+value?.id)
         .then(async (response) => {
             console.log('Detail commune++++++++++',response.data)
             this.model.id_beneficiaire = response.data.id

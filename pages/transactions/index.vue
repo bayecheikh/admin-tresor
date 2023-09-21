@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container" flat>  
-      <list-transaction></list-transaction>      
+      <table-transaction></table-transaction>      
     </v-card>
   </div> 
 </div>
@@ -18,6 +18,7 @@
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
 import ListTransaction from '@/components/transactions/ListTransaction'
+import TableTransaction from '@/components/transactions/TableTransaction'
 import { mapActions} from 'vuex'
   export default {
     layout: "dashboard",
@@ -29,7 +30,7 @@ import { mapActions} from 'vuex'
     components: {
       LeftMenu,
       PageHeader,
-      ListTransaction
+      TableTransaction
     },
     mounted: function() {
       /* this.$store.dispatch('transactions/getList',1) */

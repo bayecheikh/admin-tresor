@@ -41,7 +41,7 @@ import FormUpdatePaiement from '@/components/paiements/modifier/FormUpdatePaieme
           exact: true
         },
         {
-          text: 'Détail paiement',
+          text: 'Modifier paiement',
           disabled: true,
           to: '/paiements/94',
           exact: true

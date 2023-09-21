@@ -58,7 +58,7 @@
         <v-text-field
           label="Numéro CNI"
           outlined dense
-          v-model="model.numero_cin"
+          v-model="model.cni_beneficiaire"
           :rules="rules.textfieldRules"
         ></v-text-field>
       </v-col>
@@ -116,61 +116,25 @@
           :rules="rules.textfieldRules"
         ></v-textarea>
       </v-col>
-      <!-- <v-col lg="4" md="4" sm="12">
-        <v-autocomplete
-          v-model="region"
-          :rules="rules.selectRules"
-          :items="listregions"
-          outlined
-          dense
-          label="Région"
-          item-text="nom_region"
-          item-value="id"
-          return-object
-          @change="changeRegion"
-        >
-        </v-autocomplete>
-      </v-col> -->
-      <!-- <v-col lg="4" md="4" sm="12">
-        <v-autocomplete
-          v-model="departement"
-          :rules="rules.selectRules"
-          :items="listdepartements"
-          outlined
-          dense
-          label="Departement"
-          item-text="nom_departement"
-          item-value="id"
-          return-object
-          @change="changeDepartement"
-        >
-        </v-autocomplete>
-      </v-col>
-      <v-col lg="4" md="4" sm="12">
-        <v-autocomplete
-          v-model="commune"
-          :rules="rules.selectRules"
-          :items="listcommunes"
-          outlined
-          dense
-          label="Commune"
-          item-text="nom_commune"
-          item-value="id"
-          return-object
-          @change="changeCommune"
-        >
-        </v-autocomplete>
-      </v-col> -->
+     
      
     </v-row>
 
     <v-btn
-      :loading="loading"
-      :disabled="!valid"
-      class="mr-4 text-white" color="primary"
-      @click="controleValidation"
+      :loading="loadingbrouillon"
+      :disabled="!validBrouillon"
+      class="mr-4 text-white" color="blue"
+      @click="enregistrerBrouillon"
     >
-      Enregistrer
+      Enregistrer comme brouillon 
+    </v-btn>
+    <v-btn
+      :loading="loadingsoumettre"
+      :disabled="!validSoumettre"
+      class="mr-4 text-white" color="green"
+      @click="soumettreDemande"
+    >
+      Soumettre la demande
     </v-btn>
   </v-form>
 </div>
@@ -184,24 +148,34 @@ import { mapMutations, mapGetters } from 'vuex'
       Notification
     },
     mounted: function() {
+      this.$msasApi.get('/paiements')
+          .then((res) => {           
+            this.listlibellespaiements = res.data.data
+            console.log ('LLP+++++++++++++++++', this.listlibellespaiements)
+          })
+          this.$msasApi.get('/operateurs')
+          .then((res) => {           
+            this.listlibellesoperateurs = res.data.data
+            console.log ('LL0+++++++++++++++++', this.listlibellesoperateurs)
+          })
+      this.loggedInUser = this.$getUser() 
       console.log("AAAAA6+++++++++++", this.$route.query.beneficiaire)
       if(this.$route.query.beneficiaire){
        this.changeBeneficiaire(this.$route.query.beneficiaire)
       }
-      else{
-        this.beneficiaire = null
-      }
-      this.getRegions()
 
     },
     computed: {
     },
     data: () => ({
-      loading: false,
+      loggedInUser:null,
+      loadingbrouillon: false,
+      loadingsoumettre: false,
+      validBrouillon : true,
+      validSoumettre : true,
       valid: true,
-
-      listlibellesoperateurs:[{'id':1, 'libelle':'Orange Money', 'slug': 'OM'}, {'id':2, 'libelle':'Wave', 'slug': 'WV'}],
-      listlibellespaiements:[{'id':1, 'libelle':'Mandat', 'slug': 'MD'}, {'id':2, 'libelle':'Pension', 'slug': 'PS'}, , {'id':3, 'libelle':'Salaire', 'slug': 'SL'}, , {'id':4, 'libelle':'Secours', 'slug': 'SC'}],
+      listlibellesoperateurs:[],
+      listlibellespaiements:[],
       listdepartements:[],
       listregions:[],
       listbeneficiaires:[],
@@ -214,12 +188,24 @@ import { mapMutations, mapGetters } from 'vuex'
       
 
       model: {
+        id_beneficiaire: '',
         prenom_beneficiaire: '',
         nom_beneficiaire: '',
+        cni_beneficiaire: '',
         telephone_beneficiaire: '',
         adresse_beneficiaire: '',
-        numero_cin: '',
-       
+        id_paiement:'',
+        libelle_paiement:'',
+        slug_paiement:'',
+        id_operateur:'',
+        libelle_operateur:'',
+        slug_operateur:'',
+        montant:'',
+        commentaire: '',
+        motif_rejet: '',
+        user_id: '',
+        status : '',
+        state : 'INIT',
       },
       rules:{
         textfieldRules: [],
@@ -232,24 +218,22 @@ import { mapMutations, mapGetters } from 'vuex'
       }
     }),
     methods: {
-      async getRegions(){
-        this.$msasApi.$get('regions')
-        .then(async (response) => { 
-          console.log('Données région reçu+++++++++++',response)
-          this.listregions=response.data
-          }).catch((error) => {
-              console.log('Code error ++++++: ', error?.response?.data?.message)
-          }).finally(() => {
-          console.log('Requette envoyé ')
-        });
-      },
+     
       submitForm () {
         let validation = this.$refs.form.validate()
-        this.loading = true;
-    
-        console.log('Données formulaire +++++',{...this.model,libelle_operateur:this.objet_libelle_operateur,libelle_paiement:this.objet_libelle_paiement})
-       return;
-        validation && this.$msasApi.post('/transactions',{...this.model,beneficiaire:[this.beneficiaire],commune:[this.commune],departement:[this.departement],region:[this.region]})
+       
+        this.model.user_id = parseInt(this.loggedInUser.id)
+        this.model.montant = parseInt(this.model.montant)
+        this.model.id_operateur = this.objet_libelle_operateur.id
+        this.model.libelle_operateur = this.objet_libelle_operateur.libelle
+        this.model.slug_operateur = this.objet_libelle_operateur.slug
+        this.model.id_paiement = this.objet_libelle_paiement.id
+        this.model.libelle_paiement = this.objet_libelle_paiement.libelle
+        this.model.slug_paiement = this.objet_libelle_paiement.slug
+
+        console.log('Données formulaire +++++',{...this.model})
+     
+        validation && this.$msasApi.post('/transactions',{...this.model})
           .then((res) => {           
             console.log('Données reçus ++++++: ',res.data)
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
@@ -259,14 +243,26 @@ import { mapMutations, mapGetters } from 'vuex'
               console.log('Code error ++++++: ', error)
               this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Echec de l\'ajout '})
           }).finally(() => {
-            this.loading = false;
-            console.log('Requette envoyé ')
+            this.loadingbrouillon = false
+            this.loadingsoumettre = false
+            console.log('Requête envoyée ')
         }); 
       },
-      async controleValidation(){
-        this.textfieldRules = [v => !!v || 'Champ obligatoire']
-        this.submitForm()
+      async enregistrerBrouillon(){
+        this.loadingbrouillon = true;
+        this.validSoumettre = false
+        this.model.status = 'brouillon'
+        await this.submitForm()
+ 
       },
+      async soumettreDemande(){
+        this.loadingsoumettre = true
+        this.validBrouillon = false
+        this.model.status = 'soumis'
+        await this.submitForm()
+      
+      },
+    
       // async changeRegion(value) {
       //   this.departement= null
       //   this.commune = null
@@ -309,12 +305,13 @@ import { mapMutations, mapGetters } from 'vuex'
         value && value.id &&  this.$msasApi.$get('/beneficiaires/'+value.id)
         .then(async (response) => {
             console.log('Detail commune++++++++++',response.data)
+            this.model.id_beneficiaire = response.data.id
             this.model.prenom_beneficiaire = response.data.prenom_beneficiaire
             this.model.nom_beneficiaire = response.data.nom_beneficiaire
             this.model.telephone_beneficiaire = response.data.telephone_beneficiaire
-            this.model.numero_cin = response.data.numero_cin
+            this.model.cni_beneficiaire = response.data.numero_cin
             this.model.adresse_beneficiaire = response.data.adresse_beneficiaire
-            this.listtransactions = response.data.transactions
+           
         }).catch((error) => {
             console.log('Code error ++++++: ', error?.response?.data?.message)
         }).finally(() => {

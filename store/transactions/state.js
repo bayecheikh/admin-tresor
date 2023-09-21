@@ -3,13 +3,16 @@ export default () => ({
 
     headertransactions : [
         { text: 'Réf.', value: 'reference_transaction' },
-        { text: 'Nom', value: 'titre_transaction' }, 
-        { text: 'Bénéficiaire', value: 'beneficiaire' },
+        { text: 'Prénom bénéficiaire', value: 'prenom_beneficiaire' },
+        { text: 'Nom bénéficiaire', value: 'nom_beneficiaire' },
+        { text: 'Montant', value: 'montant' }, 
+        { text: 'Statut', value: 'status' }, 
         { text: 'Actions', value: 'actions', sortable: false },
     ],
     headertransactions2 : [
         { text: 'Réf.', value: 'reference_transaction' },
-        { text: 'Nom', value: 'titre_transaction' }, 
+        { text: 'Prénom bénéficiaire', value: 'prenom_beneficiaire'},
+        { text: 'Nom bénéficiaire', value: 'nom_beneficiaire' },
         { text: 'Actions', value: 'actions', sortable: false },
     ],
     detailtransaction :{},

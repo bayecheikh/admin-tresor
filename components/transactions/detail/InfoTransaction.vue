@@ -8,20 +8,25 @@
                   <!--<p class="info-profil mb-4"><span>Prénom: </span>{{detailUtilisateur.firstname}}</p>
                   <p class="info-profil mb-4"><span>Nom: </span>{{detailUtilisateur.lastname}}</p>-->
                   <p class="info-profil mb-4"><span>Référence transaction: </span>{{detailTransaction.reference_transaction}}</p>            
-                  <p class="info-profil mb-4"><span>Titre : </span>{{detailTransaction.titre_transaction}}</p>
+                  <p class="info-profil mb-4"><span>Bénéficiaire : </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].prenom_beneficiaire +' '+detailTransaction.beneficiaire[0].nom_beneficiaire  }} </p>
+                  <p class="info-profil mb-4"><span>CNI bénéficiaire : </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].numero_cin}}</p>
+              </div>
+              <div class="col-md-4">
+                <p class="info-profil mb-4"><span>Téléphone bénéficiaire : </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].telephone_beneficiaire}}</p>            
+                <p class="info-profil mb-4"><span>Libellé Paiement : </span>{{detailTransaction && detailTransaction.libelle_paiement}}</p>            
+                  <p class="info-profil mb-4"><span>Opérateur de paiement : </span>{{detailTransaction && detailTransaction.libelle_operateur}}</p>
               </div>
               <div class="col-md-4">
                   <!--<p class="info-profil mb-4"><span>Prénom: </span>{{detailUtilisateur.firstname}}</p>
                   <p class="info-profil mb-4"><span>Nom: </span>{{detailUtilisateur.lastname}}</p>-->
-                  <p class="info-profil mb-4"><span>Prénom bénéficiaire: </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].prenom_beneficiaire}}</p>            
-                  <p class="info-profil mb-4"><span>Nom Bénéficiaire : </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].nom_beneficiaire}}</p>
+                  <p class="info-profil mb-4"><span>Montant : </span>{{detailTransaction && detailTransaction.montant}}</p>            
+                  <p class="info-profil mb-4"><span>Commentaire : </span>{{detailTransaction && detailTransaction.commentaire}}</p>
+                 
               </div>
               <div class="col-md-4">
-                  <!--<p class="info-profil mb-4"><span>Prénom: </span>{{detailUtilisateur.firstname}}</p>
-                  <p class="info-profil mb-4"><span>Nom: </span>{{detailUtilisateur.lastname}}</p>-->
-                  <p class="info-profil mb-4"><span>Téléphone bénéficiaire: </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].telephone_beneficiaire}}</p>            
-                  <p class="info-profil mb-4"><span>Adresse bénéficiaire : </span>{{detailTransaction.beneficiaire && detailTransaction.beneficiaire[0].adresse_beneficiaire}}</p>
-              </div>
+                
+                </div>
+            
           </div>
         </v-col>
       </v-row>

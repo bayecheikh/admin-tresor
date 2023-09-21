@@ -29,28 +29,7 @@
         <v-row class="mb-1 border-bottom-small d-flex">
           <v-col md="6" sm="12" lg="6" class="pb-0 pt-4">
             <div class="row">
-              <!-- <v-btn icon class="col-3" v-on:click="visualiser()">
-            <v-icon left class="font-small">
-              mdi-file-document-outline
-            </v-icon>
-            <span class="font-small">Visualiser</span>
-          </v-btn> 
-          <v-btn icon class="col-3" v-on:click="modifier()">
-            <v-icon left class="font-small">
-              mdi-square-edit-outline
-            </v-icon>
-            <span class="font-small">Modifier</span>
-          </v-btn>  -->
-              <!--<v-btn icon class="col-3" v-on:click="supprimer()">
-                <v-icon left class="font-small"> mdi-trash-can-outline </v-icon>
-                <span class="font-small">Supprimer</span>
-              </v-btn>-->
-              <!-- <v-btn icon class="col-3" v-on:click="exporter()">
-            <v-icon left class="font-small">
-              mdi-file-export-outline
-            </v-icon>
-            <span class="font-small">Exporter</span>
-          </v-btn> -->
+        
             </div>
           </v-col>
           <v-col md="6" sm="12" lg="6" class="pt-0 pb-2 align-right-pagination">
@@ -121,19 +100,19 @@
                   </v-icon>Détail
                 </v-list-item-title>
               </v-list-item>
-              <!--<v-list-item @click="editItem(item)" link class="custom-v-list-action pl-2 pr-1">
+              <!-- <v-list-item @click="editItem(item)" link class="custom-v-list-action pl-2 pr-1">
                 <v-list-item-title> 
                   <v-icon small class="mr-2"> mdi-pencil-outline </v-icon
                   >Modifier
                 </v-list-item-title>
-              </v-list-item>
+              </v-list-item> -->
               <v-list-item @click="opendialog(item)" class="custom-v-list-action pl-2 pr-1">
                 <v-list-item-title>
                   <v-icon small class="mr-2" v-bind="attrs" v-on="on">
                     mdi-delete-outline </v-icon
                   >Supprimer
                 </v-list-item-title>
-              </v-list-item>-->
+              </v-list-item>
             </v-item-group>
           </v-list>
         </v-menu>

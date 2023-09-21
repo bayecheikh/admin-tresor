@@ -51,7 +51,7 @@ import ActionsPaiement from '@/components/paiements/detail/ActionsPaiement';
           exact: true
         },
         {
-          text: 'Detail paiement',
+          text: 'Détail paiement',
           disabled: true,
           to: '/paiements/94',
           exact: true

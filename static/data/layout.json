@@ -15,26 +15,26 @@
       "name": "gerer-beneficiaires"
     },
     {
-      "icon": "mdi-account-group-outline",
+      "icon": "mdi-account-cash-outline",
       "href": "/transactions",
       "title": "Transactions",
       "name": "gerer-transactions"
     },
     {
-      "icon": "mdi-account-group-outline",
+      "icon": "mdi-cash-multiple",
       "href": "/annuaires",
       "title": "Paiement de masse",
       "name": "gerer-annuaires"
     },
     
     {
-      "icon": "mdi-account-group-outline",
+      "icon": "mdi-account-supervisor-outline",
       "href": "/utilisateurs",
       "title": "Utilisateurs",
       "name": "gerer-utilisateurs"
     }, 
     {
-      "icon": "mdi-account-lock-outline",
+      "icon": "mdi-cog-outline",
       "href": "/parametres",
       "title": "Paramètres",
       "name": "gerer-parametres"

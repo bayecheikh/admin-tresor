@@ -5,10 +5,10 @@
       <div>
         <v-tabs v-model="tab">
           <v-tab class="text-normal" @click="changeTab('')"> Tout</v-tab>
-          <v-tab class="text-normal" @click="changeTab('brouillon')" > Brouillons</v-tab>
-          <v-tab class="text-normal" @click="changeTab('soumis')"> En attente de validation</v-tab>
-          <v-tab class="text-normal" @click="changeTab('rejete')"> Rejetés</v-tab>
-          <v-tab class="text-normal" @click="changeTab('valide')"> Validés</v-tab>
+          <v-tab class="text-normal" @click="changeTab('brouillon')" v-if="$hasPermission('brouillon')" > Brouillons</v-tab>
+          <v-tab class="text-normal" @click="changeTab('soumis')" v-if="$hasPermission('soumis')"> En attente de validation</v-tab>
+          <v-tab class="text-normal" @click="changeTab('rejete')" v-if="$hasPermission('rejete')"> Rejetés</v-tab>
+          <v-tab class="text-normal" @click="changeTab('valide')" v-if="$hasPermission('valide')"> Validés</v-tab>
         </v-tabs>
       </div>
       <div class="ml-auto p-2">

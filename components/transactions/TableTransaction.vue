@@ -187,7 +187,7 @@ import RechercheTransaction from '@/components/transactions/RechercheTransaction
       RechercheTransaction
     },
     mounted: function() {
-      this.getList(1,'')
+      this.getList(1,this.status)
     },
     computed: mapGetters({
       listtransactions: 'transactions/listtransactions',

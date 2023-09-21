@@ -65,10 +65,10 @@ import Notification from '@/components/Notification'
         let validation = this.$refs.form.validate()
         console.log('Données formulaire ++++++ : ',{...this.model})
        
-        validation && this.$msasApi.post('/operateurs', {...this.model})
+        validation && this.$msasApi.post('/paiements', {...this.model})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
-            this.$router.push('/operateurs');
+            this.$router.push('/paiements');
             
           })
           .catch((error) => {

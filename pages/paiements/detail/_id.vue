@@ -1,63 +1,59 @@
 <template>
-<div>
+  <div>
   <div class="custom-container bg-title-grey">
       <page-header :items="headerItems" class=""></page-header>  
   </div> 
   <div class="custom-container">
     <v-card class="container pl-10 pt-10 pb-10 pr-10" flat>  
-      <v-row align="center"
+     <v-row align="center"
             justify="center">
             <v-col cols="12" md="12" lg="12" sm="12">
-              <info-beneficiaire></info-beneficiaire>
+              <info-paiement></info-paiement>
             </v-col>
             <v-col cols="12" md="12" lg="12" sm="12">
-              <actions-beneficiaire></actions-beneficiaire>
+              <actions-paiement></actions-paiement>
             </v-col>
-          </v-row>      
+          </v-row>
     </v-card>
   </div> 
 </div>
-  
-  
 </template>
 
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import InfoBeneficiaire from '@/components/beneficiaires/detail/InfoBeneficiaire';
-import ActionsBeneficiaire from '@/components/beneficiaires/detail/ActionsBeneficiaire';
-import HistoriqueBeneficiaire from '@/components/beneficiaires/detail/HistoriqueBeneficiaire';
+import InfoPaiement from '@/components/paiements/detail/InfoPaiement';
+import ActionsPaiement from '@/components/paiements/detail/ActionsPaiement';
   export default {
     layout: "dashboard",
     components: {
       LeftMenu,
       PageHeader,
-      InfoBeneficiaire,
-      ActionsBeneficiaire,
-      HistoriqueBeneficiaire
+      InfoPaiement,
+      ActionsPaiement
     },
     middleware: function ({redirect,$hasPermission}) {
-      if(!$hasPermission('gerer-beneficiaires')){
+      if(!$hasPermission('gerer-parametres')){
         return redirect('/')
       }
     },
     data () {
       return {
         leftmenuItems: [
-          { text: 'Ajouter un beneficiaire', icon: 'mdi-account-plus-outline',link:'/beneficiaires/addUser',position:0 },
-          { text: 'Liste des bénéficiaires', icon: 'mdi-account-group',link:'/beneficiaires',position:1  }
+          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Paiements', icon: 'mdi-lock',link:'/paiements',position:2  }
         ],
         headerItems: [
         {
-          text: 'Bénéficiaires',
+          text: 'Paiement',
           disabled: false,
-          to: '/beneficiaires',
+          to: '/paiements',
           exact: true
         },
         {
-          text: 'Détail bénéficiaire',
+          text: 'Detail paiement',
           disabled: true,
-          to: '/beneficiaires/94',
+          to: '/paiements/94',
           exact: true
         }
         

@@ -21,22 +21,33 @@
       outlined
       v-on:click="modifier()"
     >
-      <v-icon left>
+      <v-icon middle>
         mdi-pencil
       </v-icon>
       Modifier les infos
     </v-btn>
+    <v-btn
+      flat
+      rounded
+      outlined
+      color="green"
+      v-on:click="payer()"
+    >
+      <v-icon left>
+        mdi-pencil
+      </v-icon>
+      Payer {{ detailBeneficiaire.prenom_beneficiaire }}
+    </v-btn>
+    
   </v-row>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from 'vuex'
   export default {
-    mounted: function() {
-      this.model.email = this.detailUtilisateur.email
-    },
+   
     computed: mapGetters({
-      detailUtilisateur: 'beneficiaires/detailbeneficiaire'
+      detailBeneficiaire: 'beneficiaires/detailbeneficiaire'
     }),
     data: () => ({
       loading:false,
@@ -46,16 +57,7 @@ import { mapMutations, mapGetters } from 'vuex'
         password: '',
         password_confirmation: '',
       },
-      rules:{
-        passwordRules: [
-          v => !!v || 'Mot de passe est obligatoire',
-          v => (v && v.length >= 8) || 'Mot de passe doit etre superieur ou égal à 8 caracteres',
-        ],
-        emailRules: [
-          v => !!v || 'E-mail est obligatoire',
-          v => /.+@.+\..+/.test(v) || 'E-mail mdoit etre valide',
-        ]
-      },
+     
     }),
     methods: {
      submitForm () {
@@ -85,7 +87,13 @@ import { mapMutations, mapGetters } from 'vuex'
         this.$router.push('/beneficiaires');
       },
       modifier(){ 
-        this.$router.push('/beneficiaires/modifier/'+this.detailUtilisateur.id);      
+        this.$router.push('/beneficiaires/modifier/'+this.detailBeneficiaire.id);      
+      },
+      payer(){ 
+        this.$router.push({
+          path: '/transactions/addTransaction',
+          query: { beneficiaire: this.detailBeneficiaire }
+        });  
       },
       reinitialiser(){  
         this.dialog = true    

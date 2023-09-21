@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container pl-10 pt-10 pb-10 pr-10" flat>  
-      <form-add-operateur></form-add-operateur>
+      <form-update-paiement></form-update-paiement>
     </v-card>
   </div> 
 </div>
@@ -14,13 +14,13 @@
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
+import FormUpdatePaiement from '@/components/paiements/modifier/FormUpdatePaiement';
   export default {
     layout: "dashboard",
     components: {
       LeftMenu,
       PageHeader,
-      FormAddOperateur
+      FormUpdatePaiement
     },
     middleware: function ({redirect,$hasPermission}) {
       if(!$hasPermission('gerer-parametres')){
@@ -30,20 +30,20 @@ import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
     data () {
       return {
         leftmenuItems: [
-          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
-          { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
+          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Paiements', icon: 'mdi-lock',link:'/paiements',position:2  }
         ],
         headerItems: [
         {
-          text: 'Opérateurs de paiement',
+          text: 'Paiement',
           disabled: false,
-          to: '/operateurs',
+          to: '/paiements',
           exact: true
         },
         {
-          text: 'Nouvel opérateur de paiement',
-          disabled: false,
-          to: '/operateurs/addOperateur',
+          text: 'Détail paiement',
+          disabled: true,
+          to: '/paiements/94',
           exact: true
         }
         
@@ -56,7 +56,7 @@ import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
         menu2: false,
         menu3: false,
         modal: false,
-        operateurs : ['Sperviseur national'],
+        paiements: ['Sperviseur national'],
         localisations: ['Thiès','Dakar'],
 
       }

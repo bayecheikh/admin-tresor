@@ -5,7 +5,7 @@
   </div> 
   <div class="custom-container">
     <v-card class="container pl-10 pt-10 pb-10 pr-10" flat>  
-      <form-add-operateur></form-add-operateur>
+      <form-add-paiement></form-add-paiement>
     </v-card>
   </div> 
 </div>
@@ -14,13 +14,13 @@
 <script>
 import LeftMenu from '@/components/LeftMenu';
 import PageHeader from '@/components/PageHeader';
-import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
+import FormAddPaiement from '@/components/paiements/FormAddPaiement';
   export default {
     layout: "dashboard",
     components: {
       LeftMenu,
       PageHeader,
-      FormAddOperateur
+      FormAddPaiement
     },
     middleware: function ({redirect,$hasPermission}) {
       if(!$hasPermission('gerer-parametres')){
@@ -31,19 +31,19 @@ import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
       return {
         leftmenuItems: [
           { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
-          { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
+          { text: 'Paiements', icon: 'mdi-lock',link:'/paiements',position:2  }
         ],
         headerItems: [
         {
-          text: 'Opérateurs de paiement',
+          text: 'Paiements',
           disabled: false,
-          to: '/operateurs',
+          to: '/paiements',
           exact: true
         },
         {
-          text: 'Nouvel opérateur de paiement',
+          text: 'Nouveau paiement',
           disabled: false,
-          to: '/operateurs/addOperateur',
+          to: '/paiements/addPaiement',
           exact: true
         }
         
@@ -56,7 +56,7 @@ import FormAddOperateur from '@/components/operateurs/FormAddOperateur';
         menu2: false,
         menu3: false,
         modal: false,
-        operateurs : ['Sperviseur national'],
+        paiements : ['Sperviseur national'],
         localisations: ['Thiès','Dakar'],
 
       }

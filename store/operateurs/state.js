@@ -3,7 +3,7 @@ export default () => ({
 
     headeroperateurs : [
         {
-            text: 'Libelle',
+            text: 'Libellé',
             align: 'start',
             sortable: true,
             value: 'libelle',

@@ -22,4 +22,8 @@ export default {
     async getDataSearch({commit},payload){
         await commit('initdatasearch', payload)
     },
+    async deletetransaction({commit,dispatch},payload){
+        await commit('removeItem',payload) 
+        
+    }
 }

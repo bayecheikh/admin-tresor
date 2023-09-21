@@ -10,14 +10,14 @@
             :rules="rules.libelleRules"
           ></v-text-field>
         </v-col>
-        <v-col md="6" lg="6" sm="12">
+        <!-- <v-col md="6" lg="6" sm="12">
           <v-text-field
             label="Slug"
             outlined dense
             v-model="model.slug"
             :rules="rules.slugRules"
           ></v-text-field>
-        </v-col>
+        </v-col> -->
       </v-row>
       <v-btn
       :loading="loading"
@@ -35,6 +35,9 @@
 <script>
 import Notification from '@/components/Notification'
   export default {
+    mounted(){
+      this.getDetail(this.$nuxt._route.params.id)
+    },
     components: {
       Notification
     },
@@ -47,7 +50,6 @@ import Notification from '@/components/Notification'
       valid: true,
       model: {
         libelle: '',
-        slug: '',
       },
       rules:{
         libelleRules: [
@@ -60,13 +62,30 @@ import Notification from '@/components/Notification'
       },
     }),
     methods: {
+      getDetail(id){
+          this.progress=true
+          this.$msasApi.$get('/operateurs/'+id)
+        .then(async (response) => {
+            console.log('Détail opérateur ++++++++++',response.data)
+            this.$store.dispatch('operateurs/getDetail',response.data)
+            this.model.libelle = response.data.libelle
+           
+
+        }).catch((error) => {
+            this.$toast.error(error?.response?.data?.message).goAway(3000)
+            console.log('Code error ++++++', error?.response?.data?.message)
+        }).finally(() => {
+            console.log('Requette envoyé ')
+            this.progress=false
+        });
+      },
       submitForm () {
         this.loading = true;
         let validation = this.$refs.form.validate()
         console.log('Données formulaire ++++++ : ',{...this.model})
         
         
-        validation && this.$msasApi.post('/operateurs', {...this.model})
+        validation && this.$msasApi.put('/operateurs/'+this.$nuxt._route.params.id, {...this.model})
           .then((res) => {    
             this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Ajout réussi'})
             this.$router.push('/operateurs');

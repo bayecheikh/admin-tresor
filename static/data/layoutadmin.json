@@ -15,20 +15,20 @@
       "name": "gerer-parametres"
     },
     {
-      "icon": "mdi-account-lock-outline",
+      "icon": "mdi-account-cancel-outline",
       "href": "/permissions",
       "title": "Permissions",
       "name": "gerer-parametres"
     },
   
     {
-      "icon": "mdi-cog-outline",
+      "icon": "mdi-office-building",
       "href": "/operateurs",
       "title": "Opérateurs de paiement",
       "name": "gerer-parametres"
     },
     {
-      "icon": "mdi-cog-outline",
+      "icon": "mdi-tag-multiple-outline",
       "href": "/paiements",
       "title": "Paiements",
       "name": "gerer-parametres"

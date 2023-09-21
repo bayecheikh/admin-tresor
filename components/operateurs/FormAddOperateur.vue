@@ -18,6 +18,22 @@
             :rules="rules.slugRules"
           ></v-text-field>
         </v-col>
+        <!-- <v-col md="6" lg="6" sm="12">
+          <v-text-field
+            label="Statut"
+            outlined dense
+            v-model="model.statut"
+            :rules="rules.statutRules"
+          ></v-text-field>
+        </v-col> -->
+        <!-- <v-col md="6" lg="6" sm="12">
+          <v-text-field
+            label="Libellé"
+            outlined dense
+            v-model="model.libelle"
+            :rules="rules.libelleRules"
+          ></v-text-field>
+        </v-col> -->
       </v-row>
       <v-btn
       :loading="loading"
@@ -47,7 +63,7 @@ import Notification from '@/components/Notification'
       valid: true,
       model: {
         libelle: '',
-        slug: '',
+        slug: ''
       },
       rules:{
         libelleRules: [

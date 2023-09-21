@@ -3,7 +3,7 @@ export default () => ({
 
     headerpaiements : [
         {
-            text: 'Libelle',
+            text: 'Libellé',
             align: 'start',
             sortable: true,
             value: 'libelle',

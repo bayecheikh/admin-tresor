@@ -41,7 +41,7 @@ import FormUpdateOperateur from '@/components/operateurs/modifier/FormUpdateOper
           exact: true
         },
         {
-          text: 'Détail opérateur',
+          text: 'Modifier opérateur',
           disabled: true,
           to: '/operateurs/94',
           exact: true

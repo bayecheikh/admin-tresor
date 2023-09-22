@@ -117,11 +117,11 @@ export default function ({store ,redirect}, inject) {
             break;
             case 'soumis': return 'En attente de validation'
             break;
-            case 'rejete': return 'Rejeté'
+            case 'rejete': return 'Rejetée'
             break;
-            case 'valide': return 'Validé'
+            case 'valide': return 'Validée'
             break;
-            case 'paye': return 'Payé'
+            case 'paye': return 'Payée'
             break;
             default:  return ''
         }

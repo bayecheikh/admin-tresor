@@ -23,7 +23,7 @@ import FormUpdateTransaction from '@/components/transactions/modifier/FormUpdate
       FormUpdateTransaction
     },
     middleware: function ({redirect,$hasPermission}) {
-      if(!$hasPermission('gerer-transactions')){
+      if(!$hasPermission('creer-transaction')){
         return redirect('/')
       }
     },

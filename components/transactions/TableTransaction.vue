@@ -17,6 +17,7 @@
         rounded
         color="primary"
         @click="goToAddTransaction"
+        v-if="$hasPermission('creer-transaction')"
         >
           <v-icon left>
             mdi-plus

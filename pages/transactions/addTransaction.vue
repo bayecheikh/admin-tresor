@@ -23,7 +23,7 @@ import FormAddTransaction from '@/components/transactions/FormAddTransaction';
       FormAddTransaction
     },
     middleware: function ({redirect,$hasPermission}) {
-      if(!$hasPermission('gerer-transactions')){
+      if(!$hasPermission('creer-transaction')){
         return redirect('/')
       }
     },

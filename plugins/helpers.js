@@ -96,13 +96,32 @@ export default function ({store ,redirect}, inject) {
             break;
             case 'encours': return 'yellow'
             break;
-            case 'brouillon': return 'blue'
+            case 'brouillon': return 'yellow'
+            break;
+            case 'soumis': return 'blue'
+            break;
+            case 'valide': return 'green'
             break;
             case 'delivre': return 'green'
             break;
             case 'desactive': return 'red'
             break;
             case 'rejete': return 'red'
+            break;
+            default:  return ''
+        }
+    }
+    const getNameBySlug = (slug) => {
+        switch (slug){
+            case 'brouillon': return 'Brouillon'
+            break;
+            case 'soumis': return 'En attente de validation'
+            break;
+            case 'rejete': return 'Rejeté'
+            break;
+            case 'valide': return 'Validé'
+            break;
+            case 'paye': return 'Payé'
             break;
             default:  return ''
         }
@@ -128,4 +147,5 @@ export default function ({store ,redirect}, inject) {
     inject('getColore', getColore) 
     inject('getUserMenu', getUserMenu) 
     inject('getParametreMenu', getParametreMenu) 
+    inject('getNameBySlug', getNameBySlug) 
 }

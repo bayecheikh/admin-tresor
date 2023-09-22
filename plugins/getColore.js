@@ -15,7 +15,11 @@ export default (context, inject) => {
             break;
             case 'encours': return 'yellow'
             break;
-            case 'brouillon': return 'blue'
+            case 'brouillon': return 'yellow'
+            break;
+            case 'soumis': return 'blue'
+            break;
+            case 'valide': return 'green'
             break;
             case 'delivre': return 'green'
             break;

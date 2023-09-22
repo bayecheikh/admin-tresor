@@ -122,7 +122,16 @@
             </div>
                 </v-row>
               </template>
-
+              <template v-slot:[`item.status`]="{ item }">
+                <v-chip
+                  :color="$getColore(item.status)"
+                  small
+                  outlined
+                  class="my-1 mr-1"
+                >
+                  {{ $getNameBySlug(item.status) }}
+                </v-chip>
+              </template>
               <template v-slot:[`item.beneficiaire`]="{ item }">
                 <v-chip
                   color="primary"

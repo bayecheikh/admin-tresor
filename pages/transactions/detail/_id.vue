@@ -8,11 +8,12 @@
       <v-row align="center"
             justify="center">
             <v-col cols="12" md="12" lg="12" sm="12">
+              <actions-transaction></actions-transaction>
+            </v-col>
+            <v-col cols="12" md="12" lg="12" sm="12">
               <info-transaction></info-transaction>
             </v-col>
-            <!-- <v-col cols="12" md="12" lg="12" sm="12">
-              <actions-transaction></actions-transaction>
-            </v-col> -->
+            
           </v-row>      
     </v-card>
   </div> 

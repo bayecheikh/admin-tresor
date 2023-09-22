@@ -3,181 +3,182 @@
     align="center"
     justify="space-around"
   >
-  <v-dialog
-    v-model="dialog1"
-    max-width="1200px"
-    scrollable
-    persistent
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn
-      v-bind="attrs"
-          v-on="on"
-        depressed
-        rounded
-        color="primary"
-        outlined
-        >
-        <v-icon left>
-          mdi-plus
-        </v-icon>
-        Enquette point focal
-      </v-btn>
-    </template>
-    <v-card>
-      <v-card-title >Enquette point focal</v-card-title>
-      <v-divider></v-divider>
-      <v-card-text>
-        <v-container>
-          <form-add-enquette></form-add-enquette>
-        </v-container>
-      </v-card-text>
-      <v-divider></v-divider>
-        <v-card-actions>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog1 = false"
+    <!-- <v-btn
+      text
+      color="primary"
+      v-on:click="retour()"
+    >
+      <v-icon left>
+        mdi-arrow-left
+      </v-icon>
+      Retour à la liste
+    </v-btn> -->
+    <!-- <v-btn
+      flat
+      outlined
+      v-on:click="modifier()"
+      v-if="detailtransaction.status=='brouillon' || detailtransaction.status=='rejete'"
+    >
+      <v-icon left>
+        mdi-pencil
+      </v-icon>
+      Modifier
+    </v-btn>  -->
+    <div>
+      <template>
+        <v-row >
+          <v-dialog
+            v-model="dialog"
+            max-width="800px"
           >
-            Fermer
-          </v-btn>
-        </v-card-actions>
-    </v-card>
-  </v-dialog>
-  <v-dialog
-    v-model="dialog2"
-    max-width="1200px"
-    scrollable
-    persistent
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn
-      v-bind="attrs"
-          v-on="on"
-        depressed
-        rounded
-        color="primary"
-        outlined
-        >
-        <v-icon left>
-          mdi-plus
-        </v-icon>
-        Analyse risques environnementaux et sociaux
-      </v-btn>
-    </template>
-    <v-card>
-      <v-card-title >Analyse risques environnementaux et sociaux</v-card-title>
-      <v-divider></v-divider>
-      <v-card-text>
-        <v-container>
-          <form-add-analyse-risque></form-add-analyse-risque>
-        </v-container>
-      </v-card-text>
-      <v-divider></v-divider>
-        <v-card-actions>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog2 = false"
-          >
-            Fermer
-          </v-btn>
-        </v-card-actions>
-    </v-card>
-  </v-dialog> 
-  <v-dialog
-    v-model="dialog3"
-    max-width="1200px"
-    scrollable
-    persistent
-  >
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn
-      v-bind="attrs"
-          v-on="on"
-        depressed
-        rounded
-        color="primary"
-        outlined
-        >
-        <v-icon left>
-          mdi-plus
-        </v-icon>
-        Analyse genre
-      </v-btn>
-    </template>
-    <v-card>
-      <v-card-title >Analyse genre</v-card-title>
-      <v-divider></v-divider>
-      <v-card-text>
-        <v-container>
-          <form-add-analyse-genre></form-add-analyse-genre>
-        </v-container>
-      </v-card-text>
-      <v-divider></v-divider>
-        <v-card-actions>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog3 = false"
-          >
-            Fermer
-          </v-btn>
-        </v-card-actions>
-    </v-card>
-  </v-dialog> 
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                color="error"
+                  v-bind="attrs"
+                  v-on="on"
+                  depressed
+                  outlined
+                  v-if="(detailtransaction.status=='rejete') && $hasPermission(detailtransaction.state)"
+                >
+                <v-icon left>
+                  mdi-arrow-left
+                </v-icon>
+                Rejeter
+              </v-btn>
+            </template>
+            <v-card>
+              <v-card-text>
+                <v-container>
+                  <v-col lg="12" md="12" sm="12" class="pb-0 pt-10">
+                   <v-textarea
+                      v-model="model.motif"
+                      label="Motif du rejet"
+                      dense outlined
+                    ></v-textarea>
+                    <v-btn
+                    :loading="loadingRejet"
+                      flat
+                      rounded
+                      outlined
+                      color="error"
+                      v-on:click="rejeter()"
+                    >
+                      <v-icon left>
+                        mdi-check
+                      </v-icon>
+                      Rejeter
+                    </v-btn>
+                  </v-col>
+                  
+                </v-container>
+              </v-card-text>
+            </v-card>
+          </v-dialog>
+        </v-row>
+      </template>
+    </div>
+    <v-btn
+    :loading="loadingValidation"
+      flat
+      outlined
+      color="green"
+      v-on:click="valider()"
+      v-if="(detailtransaction.status=='soumis' || detailtransaction.status=='brouillon' || detailtransaction.status=='rejete') && $hasPermission(detailtransaction.state)"
+    >
+      <v-icon left>
+        mdi-check
+      </v-icon>
+      {{'Valider'}}
+    </v-btn>
   </v-row>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from 'vuex'
-
   export default {
-
     mounted: function() {
-      //this.model.email = this.detailTransaction.email
+      this.state=this.detailtransaction.state
+      this.status=this.detailtransaction.status
     },
     computed: mapGetters({
-      detailTransaction: 'transactions/detailtransaction'
+      detailtransaction: 'transactions/detailtransaction'
     }),
     data: () => ({
-      dialog1: false,
-      dialog2: false,
-      dialog3: false,
-      listTransactions:[]
+      state:'',
+      status:'',
+      loadingValidation: false,
+      loadingRejet: false,
+      message:null,
+      color:null,
+      valid: true,
+      selectedItem: 0,
+      valid: true,
+      model: {
+        motif:''
+      },
+      rules:{
+        nameRules: [
+          v => !!v || 'Libelle est obligatoire',
+          v => (v && v.length <= 50) || 'Prénom doit etre inférieur à 20 caratères',
+        ],
+        descriptionRules: [
+          v => !!v || 'Description est obligatoire'
+        ],
+      },
     }),
     methods: {
-     submitForm () {
-        let validation = this.$refs.form.validate()
-        console.log('Données formulaire++++++: ',{...this.model,token:this.tokenTemporaire})
-
-        this.loading = true;
-        
-        validation && this.$msasApi.post('/update_password', {...this.model})
-          .then((res) => {    
-            this.message = res.data.message
-            this.color = 'success'
-            console.log('Données reçus ++++++: ',res.data)
-            this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message})
-          })
-          .catch((error) => {
-              console.log('Code error ++++++: ', error.response.data.message)
-              this.message = error.response?.data?.message || 'Echec de la connection'
-              this.color='red'
-          }).finally(() => {
-            this.loading = false;
-            console.log('Requette envoyé ')
-            this.dialog = false
-        }); 
+      submitForm(){
+        alert('Formulaire soumis')
       },
       retour(){       
         this.$router.push('/transactions');
       },
       modifier(){ 
-        this.$router.push('/transactions/modifier/'+this.detailTransaction.id);      
+        this.$router.push('/transactions/modifier/'+this.detailtransaction.id);      
+      },
+
+      valider () {
+        this.loadingValidation = true;
+        console.log('Données formulaire ++++++ : ',{id:this.detailtransaction.id})
+        
+        this.$msasApi.post('/validation_transaction', {id:this.detailtransaction.id})
+          .then((res) => {  
+            this.state = res.data.data.state  
+            this.status = res.data.data.status  
+            this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'Validation réussie !'})
+            this.$router.push('/transactions');
+            
+          })
+          .catch((error) => {
+               console.log('Code error ++++++: ', error)
+              this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Echec de l\'ajout '})
+          }).finally(() => {
+            this.loadingValidation = false;
+            console.log('Requette envoyé ')
+        });
+      },
+      rejeter () {
+        this.loadingRejet = true;
+        console.log('Données formulaire ++++++ : ',{id:this.detailtransaction.id})
+        
+        this.$msasApi.post('/rejet_transaction', {id:this.detailtransaction.id,motif_rejet:this.model.motif})
+          .then((res) => {  
+            this.state = res.data.data.state  
+            this.status = res.data.data.status 
+            this.$store.dispatch('toast/getMessage',{type:'success',text:res.data.message || 'transaction rejeté avec succés!'})
+            this.$router.push('/transactions');
+            
+          })
+          .catch((error) => {
+               console.log('Code error ++++++: ', error)
+              this.$store.dispatch('toast/getMessage',{type:'error',text:error || 'Echec de l\'ajout '})
+          }).finally(() => {
+            this.loadingRejet = false;
+            console.log('Requette envoyé ')
+        });
       },
       reinitialiser(){  
-        this.dialog = true    
+        alert('Réinitialiser mot de passe')     
       },
     },
   }

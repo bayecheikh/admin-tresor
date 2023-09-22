@@ -62,6 +62,7 @@
                       outlined
                       color="error"
                       v-on:click="rejeter()"
+                      v-if="(detailtransaction.status=='soumis') && $hasPermission(detailtransaction.state)"
                     >
                       <v-icon left>
                         mdi-check

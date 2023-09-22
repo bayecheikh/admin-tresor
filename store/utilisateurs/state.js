@@ -10,12 +10,11 @@ export default () => ({
         }, */
         /* { text: 'Prénom', value: 'firstname' },
         { text: 'Nom', value: 'lastname' }, */
-        { text: 'Prénom et Nom', value: 'name' },
+        { text: 'Prénom et nom', value: 'name' },
         { text: 'Email', value: 'email' },
         /* { text: 'Telephone', value: 'telephone' }, */
-        { text: 'Roles', value: 'roles' },
-        { text: 'Secteur', value: 'secteur' },
-        { text: 'Status', value: 'status' },
+        { text: 'Rôles', value: 'roles' },
+        { text: 'Statut', value: 'status' },
         { text: 'Actions', value: 'actions', sortable: false },
     ],
     detailutilisateur :{},

@@ -41,7 +41,7 @@ import { mapActions} from 'vuex'
         leftmenuItems: [
           { text: 'Ajouter un resultat_attendu', icon: 'mdi-account-plus-outline',link:'/resultat_attendus/addUser',position:0 },
           { text: 'Liste des resultat_attendus', icon: 'mdi-account-group-outline',link:'/resultat_attendus',position:1  },
-          /* { text: 'Liste des roles', icon: 'mdi-lock',link:'/roles',position:1  }, */
+          /* { text: 'Liste des rôles', icon: 'mdi-lock',link:'/roles',position:1  }, */
           /* { text: 'Liste des permissions', icon: 'mdi-lock',link:'/permissions',position:1  } */
         ],
         headerItems: [

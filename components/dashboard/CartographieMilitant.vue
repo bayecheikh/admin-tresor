@@ -3,9 +3,9 @@
     <div class="custom-container mt-0">
       <v-row class="row pt-6">
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
-              <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-auto">
+              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-auto">
                 <h4 class="">Nombre total de bénéficiaires</h4>
-                <h2 class="text-primary mt-2">
+                <h2 class="text-primary mt-5">
                   <template v-if="isNTBloading">
                 <!-- Afficher le loader lorsque nombretotal est nul -->
                 <div class="loader"></div>
@@ -18,9 +18,9 @@
         </div> 
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
          
-              <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
+              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
                 <h4 class="">Nombre de transactions Wave</h4>
-                <h2 class="text-primary mt-2">
+                <h2 class="text-primary mt-5">
                   <template v-if="isNTWloading">
                 <!-- Afficher le loader lorsque nombretotal est nul -->
                 <div class="loader"></div>
@@ -32,9 +32,9 @@
               </div>             
         </div> 
         <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">        
-              <div class="bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
+              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
                 <h4 class="">Nombre de transactions Orange Money</h4>
-                <h2 class="text-primary mt-2">
+                <h2 class="text-primary mt-5">
                   <template v-if="isNTOloading">
                 <!-- Afficher le loader lorsque nombretotal est nul -->
                 <div class="loader"></div>
@@ -121,6 +121,9 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
+.custom-bloc{
+  height: 120px !important;
+  width: 320px !important;
+}
   </style>
   

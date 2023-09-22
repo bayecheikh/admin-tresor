@@ -40,7 +40,7 @@ import ActionsOperateur from '@/components/operateurs/detail/ActionsOperateur';
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
         ],
         headerItems: [

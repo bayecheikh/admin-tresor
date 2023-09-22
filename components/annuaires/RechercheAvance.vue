@@ -31,7 +31,7 @@
               <template>
                 <v-file-input
                   accept=".xlsx"
-                  label="Importer des bénéficiaires (excel)"
+                  label="Importer des bénéficiaires (Excel)"
                   outlined
                   v-model="selectXlsx"
                   show-size
@@ -40,11 +40,11 @@
                 </v-file-input>
               </template>
           </v-col>
-          <v-col md="3" lg="3" sm="12">
+          <!-- <v-col md="3" lg="3" sm="12">
             <v-btn large color="primary" depressed  @click="dialog=true">
               <v-icon>mdi-cellphone-message</v-icon> Payer
             </v-btn>
-          </v-col> 
+          </v-col>  -->
                   
         </v-row>
     </v-form>

@@ -16,7 +16,7 @@
           <v-icon left>
             mdi-plus
           </v-icon>
-          Nouveau role
+          Nouveau rôle
         </v-btn>
       </div>
     </div>
@@ -37,7 +37,8 @@ import TableRole from '@/components/roles/TableRole'
     data: () => ({
       tab: null,
       tabItems: [
-        {title:'Tout',value:'tout'}, {title:'Actifs',value:'actif'}, {title:'Inactifs',value:'innactif'}
+        {title:'Tout',value:'tout'},
+        // {title:'Actifs',value:'actif'}, {title:'Inactifs',value:'innactif'}
       ],
       selected: []
     }),

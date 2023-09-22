@@ -34,12 +34,12 @@ import ListRole from '@/components/roles/ListRole'
       return {
         selectedItem: 0,
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock-outline',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock-outline',link:'/roles',position:1  },
           { text: 'Permissions', icon: 'mdi-lock-outline',link:'/permissions',position:2  }
         ],
         headerItems: [
           {
-            text: 'Liste des roles',
+            text: 'Liste des rôles',
             disabled: true,
             to: '/roles',
             exact: true

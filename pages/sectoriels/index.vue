@@ -40,7 +40,7 @@ import { mapActions} from 'vuex'
         leftmenuItems: [
           { text: 'Ajouter un sectoriel', icon: 'mdi-account-plus-outline',link:'/sectoriels/addUser',position:0 },
           { text: 'Liste des sectoriels', icon: 'mdi-account-group-outline',link:'/sectoriels',position:1  },
-          /* { text: 'Liste des roles', icon: 'mdi-lock',link:'/roles',position:1  }, */
+          /* { text: 'Liste des rôles', icon: 'mdi-lock',link:'/roles',position:1  }, */
           /* { text: 'Liste des permissions', icon: 'mdi-lock',link:'/permissions',position:1  } */
         ],
         headerItems: [

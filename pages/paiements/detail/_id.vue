@@ -40,7 +40,7 @@ import ActionsPaiement from '@/components/paiements/detail/ActionsPaiement';
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Paiements', icon: 'mdi-lock',link:'/paiements',position:2  }
         ],
         headerItems: [

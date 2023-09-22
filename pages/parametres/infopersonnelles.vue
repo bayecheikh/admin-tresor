@@ -66,7 +66,7 @@
                   <v-col cols="12">
                     <v-select
                       :items="items"                
-                      label="Roles"
+                      label="Rôles"
                       outlined
                     ></v-select>
                   </v-col>

@@ -40,7 +40,7 @@ import ActionsDepartement from '@/components/departements/detail/ActionsDepartem
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Departements', icon: 'mdi-lock',link:'/departements',position:2  }
         ],
         headerItems: [

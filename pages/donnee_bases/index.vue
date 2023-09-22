@@ -40,7 +40,7 @@ import { mapActions} from 'vuex'
         leftmenuItems: [
           { text: 'Ajouter un donnee_base', icon: 'mdi-account-plus-outline',link:'/donnee_bases/addUser',position:0 },
           { text: 'Liste des donnee_bases', icon: 'mdi-account-group-outline',link:'/donnee_bases',position:1  },
-          /* { text: 'Liste des roles', icon: 'mdi-lock',link:'/roles',position:1  }, */
+          /* { text: 'Liste des rôles', icon: 'mdi-lock',link:'/roles',position:1  }, */
           /* { text: 'Liste des permissions', icon: 'mdi-lock',link:'/permissions',position:1  } */
         ],
         headerItems: [

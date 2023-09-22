@@ -38,7 +38,7 @@
                   v-on="on"
                   depressed
                   outlined
-                  v-if="(detailtransaction.status=='rejete') && $hasPermission(detailtransaction.state)"
+                  v-if="(detailtransaction.status=='soumis') && $hasPermission(detailtransaction.state)"
                 >
                 <v-icon left>
                   mdi-arrow-left

@@ -34,7 +34,7 @@ import ListPermission from '@/components/permissions/ListPermission'
       return {
         selectedItem: 0,
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Permissions', icon: 'mdi-lock',link:'/permissions',position:2  }
         ],
         headerItems: [

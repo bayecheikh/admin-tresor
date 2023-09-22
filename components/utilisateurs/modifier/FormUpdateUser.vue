@@ -185,7 +185,7 @@
               dense
               multiple
               small-chips
-              label="Role"
+              label="Rôle"
               item-text="description"
               item-value="id"
               clearable

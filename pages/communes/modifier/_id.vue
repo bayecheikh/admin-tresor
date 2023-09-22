@@ -29,7 +29,7 @@ import FormUpdateCommune from '@/components/communes/modifier/FormUpdateCommune'
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'communes', icon: 'mdi-lock',link:'/communes',position:2  }
         ],
         headerItems: [

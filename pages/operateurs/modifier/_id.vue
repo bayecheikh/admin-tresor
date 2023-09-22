@@ -30,7 +30,7 @@ import FormUpdateOperateur from '@/components/operateurs/modifier/FormUpdateOper
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Opérateurs', icon: 'mdi-lock',link:'/operateurs',position:2  }
         ],
         headerItems: [

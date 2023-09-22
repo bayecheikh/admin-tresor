@@ -37,7 +37,8 @@ import TableUser from '@/components/utilisateurs/TableUser'
     data: () => ({
       tab: null,
       tabItems: [
-        {title:'Tout',value:'tout'}, {title:'Actifs',value:'actif'}, {title:'Inactifs',value:'inactif'},
+        {title:'Tout',value:'tout'},
+        // {title:'Actifs',value:'actif'}, {title:'Inactifs',value:'inactif'},
       ],
       selected: []
     }),

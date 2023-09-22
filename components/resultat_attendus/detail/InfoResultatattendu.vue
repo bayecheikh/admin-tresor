@@ -10,7 +10,7 @@
                   <p class="info-profil mb-4"><span>Prénom et Nom: </span>{{detailSectoriel.name}}</p>
                   
                   <p class="info-profil mb-4"><span>Email : </span>{{detailSectoriel.email}}</p>
-                  <p class="info-profil mb-4"><span>Roles : </span>
+                  <p class="info-profil mb-4"><span>Rôles : </span>
                     <v-chip
                       color="primary"
                       small

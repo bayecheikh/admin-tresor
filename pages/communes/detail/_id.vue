@@ -40,7 +40,7 @@ import ActionsCommune from '@/components/communes/detail/ActionsCommune';
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Communes', icon: 'mdi-lock',link:'/communes',position:2  }
         ],
         headerItems: [

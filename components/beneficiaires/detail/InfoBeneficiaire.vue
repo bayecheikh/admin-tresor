@@ -2,8 +2,8 @@
   <v-card class="">                   
     <v-card-text>
       <v-row>
-        <v-col md="3" sm="12" lg="3" text-md-center>
-          <!-- <img src="@/static/avatar/beneficiaire.png" class="beneficiaire-profil" alt="Espace Senegal Service"> -->
+        <!-- <v-col md="3" sm="12" lg="3" text-md-center>
+       
           <div class="headline">
             <v-avatar v-if="detailBeneficiaire.avatar" tile style="border: solid 2px #d8d8d8;" size="150px">
               <img :src="detailBeneficiaire.avatar" alt="Avatar"/>
@@ -12,19 +12,18 @@
               <img src="@/static/avatar/default-user.png" alt="Avatar"/>
             </v-avatar>
           </div>
-        </v-col>
+        </v-col> -->
         <v-col md="9" sm="12" lg="9" text-md-left>
           <div class="row">
-            <div class="col-md-6 border-left">
-                <p class="info-profil mb-4"><span>Prénom: </span>{{detailBeneficiaire.prenom_beneficiaire}}</p>
-                <p class="info-profil mb-4"><span>Nom: </span>{{detailBeneficiaire.nom_beneficiaire}}</p> 
-                <p class="info-profil mb-4"><span>Adresse: </span>{{detailBeneficiaire.adresse_beneficiaire}}</p> 
+            <div class="col-md-6">
+                <p class="info-profil mb-4"><span>Prénom : </span>{{detailBeneficiaire.prenom_beneficiaire}}</p>
+                <p class="info-profil mb-4"><span>Nom : </span>{{detailBeneficiaire.nom_beneficiaire}}</p> 
+                <p class="info-profil mb-4"><span>Adresse : </span>{{detailBeneficiaire.adresse_beneficiaire}}</p> 
                 
               </div>
               <div class="col-md-6 border-left">              
                 <p class="info-profil mb-4"><span>Téléphone : </span>{{detailBeneficiaire.telephone_beneficiaire}}</p>
                 <p class="info-profil mb-4"><span>Numéro CNI : </span>{{ detailBeneficiaire.numero_cin }}
-                 
                 </p>
               </div>
           </div>

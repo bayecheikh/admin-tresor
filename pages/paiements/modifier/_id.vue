@@ -30,7 +30,7 @@ import FormUpdatePaiement from '@/components/paiements/modifier/FormUpdatePaieme
     data () {
       return {
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'Paiements', icon: 'mdi-lock',link:'/paiements',position:2  }
         ],
         headerItems: [

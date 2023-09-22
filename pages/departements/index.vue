@@ -34,7 +34,7 @@ import ListDepartement from '@/components/departements/ListDepartement'
       return {
         selectedItem: 0,
         leftmenuItems: [
-          { text: 'Roles', icon: 'mdi-lock',link:'/roles',position:1  },
+          { text: 'Rôles', icon: 'mdi-lock',link:'/roles',position:1  },
           { text: 'departements', icon: 'mdi-lock',link:'/departements',position:2  }
         ],
         headerItems: [

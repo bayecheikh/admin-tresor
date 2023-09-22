@@ -8,7 +8,7 @@
           label="Prénom"
           outlined dense
           v-model="model.prenom_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.prenomRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -16,7 +16,7 @@
           label="Nom"
           outlined dense
           v-model="model.nom_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.nomRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -24,7 +24,7 @@
           label="Téléphone"
           outlined dense
           v-model="model.telephone_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.telephoneRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -32,7 +32,7 @@
           label="Numéro CNI"
           outlined dense
           v-model="model.numero_cin"
-          :rules="rules.textfieldRules"
+          :rules="rules.numero_cinRules"
         ></v-text-field>
       </v-col>
       <!-- <v-col lg="4" md="4" sm="12">
@@ -134,6 +134,24 @@ import { mapMutations, mapGetters } from 'vuex'
         telephone_beneficiaire:''
       },
       rules:{
+        prenomRules: [
+          v => !!v || 'Le prénom du bénéficiaire est obligatoire',
+        ],
+        nomRules: [
+          v => !!v || 'Le nom du bénéficiaire est obligatoire',
+          // v => (v && v.length >= 2) || 'Le prénom doit contenir au moins 2 caracteres',
+        ],
+        telephoneRules: [
+          v => !!v || 'Le numéro de téléphone est obligatoire',
+          v => (v && /^\d+$/.test(v)) || 'Le numéro de téléphone doit contenir uniquement des chiffres',
+          v => (v && v.length === 9) || 'Le numéro de téléphone doit contenir exactement 9 chiffres',
+        ],
+        numero_cinRules: [
+            v => !!v || 'Le numéro CNI est obligatoire',
+            v => (v && /^\d+$/.test(v)) || 'Le numéro CNI doit contenir uniquement des chiffres',
+            v => (v && v.length === 13) || 'Le numéro CNI doit contenir exactement 13 chiffres',
+        ],
+       
         textfieldRules: [],
         radioRules: [],
         selectRules: [],

@@ -5,6 +5,8 @@ export default () => ({
         { text: 'Réf.', value: 'reference_transaction' },
         { text: 'Prénom bénéficiaire', value: 'prenom_beneficiaire' },
         { text: 'Nom bénéficiaire', value: 'nom_beneficiaire' },
+        { text: 'Libellé de paiement', value: 'libelle_paiement' },
+        { text: 'Opérateur de paiement', value: 'libelle_operateur' }, 
         { text: 'Montant', value: 'montant' }, 
         { text: 'Statut', value: 'status' }, 
         { text: 'Actions', value: 'actions', sortable: false },

@@ -100,11 +100,11 @@ import { mapMutations, mapGetters } from 'vuex'
       },
       rules:{
         nameRules: [
-          v => !!v || 'Prénom est obligatoire',
-          v => (v && v.length <= 50) || 'Prénom doit etre inférieur à 20 caratères',
+          v => !!v || 'Le nom est obligatoire',
+          v => (v && v.length <= 50) || 'Le nom ne doit pas dépasser 50 caractères',
         ],
         descriptionRules: [
-          v => !!v || 'Nom est obligatoire'
+          v => !!v || 'La description est obligatoire'
         ],
       },
     }),

@@ -10,7 +10,7 @@ export default () => ({
             value: 'name',
             align: ' d-none'
         },
-        { text: 'Role', value: 'description' },
+        { text: 'Rôle', value: 'description' },
         { text: 'Permissions', value: 'permissions',sortable: false },
         /* { text: 'Status', value: 'status' }, */
         { text: 'Actions', value: 'actions', sortable: false },

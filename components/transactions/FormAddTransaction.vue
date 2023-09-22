@@ -35,7 +35,7 @@
           label="Prénom du bénéficiaire"
           outlined dense
           v-model="model.prenom_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.prenom_beneficiaireRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -43,7 +43,7 @@
           label="Nom du bénéficiaire"
           outlined dense
           v-model="model.nom_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.nom_beneficiaireRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -51,7 +51,7 @@
           label="Téléphone du bénéficiaire"
           outlined dense
           v-model="model.telephone_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.telephone_beneficiaireRules"
         ></v-text-field>
       </v-col>
       <v-col md="6" lg="6" sm="12">
@@ -59,7 +59,7 @@
           label="Numéro CNI"
           outlined dense
           v-model="model.cni_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.cni_beneficiaireRules"
         ></v-text-field>
       </v-col>
       <v-col md="12" lg="12" sm="12">
@@ -67,13 +67,13 @@
           label="Adresse du bénéficiaire"
           outlined dense
           v-model="model.adresse_beneficiaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.adresse_beneficiaireRules"
         ></v-text-field>
       </v-col>
       <v-col lg="6" md="6" sm="12">
         <v-autocomplete
           v-model="libelle_paiement"
-          :rules="rules.selectRules"
+          :rules="rules.libelle_paiementRules"
           :items="listlibellespaiements"
           outlined
           dense
@@ -88,7 +88,7 @@
       <v-col lg="6" md="6" sm="12">
         <v-autocomplete
           v-model="libelle_operateur"
-          :rules="rules.selectRules"
+          :rules="rules.libelle_operateurRules"
           :items="listlibellesoperateurs"
           outlined
           dense
@@ -105,7 +105,7 @@
           label="Montant à payer (F CFA)"
           outlined dense
           v-model="model.montant"
-          :rules="rules.textfieldRules"
+          :rules="rules.montantRules"
         ></v-text-field>
       </v-col>
       <v-col md="12" lg="12" sm="12">
@@ -113,7 +113,7 @@
           label="Commentaire"
           outlined dense
           v-model="model.commentaire"
-          :rules="rules.textfieldRules"
+          :rules="rules.commentaireRules"
         ></v-textarea>
       </v-col>
      
@@ -210,6 +210,36 @@ import { mapMutations, mapGetters } from 'vuex'
         state : 'INIT',
       },
       rules:{
+        prenom_beneficiaireRules: [
+          v => !!v || 'Le prénom du bénéficiaire est obligatoire',
+        ],
+        nom_beneficiaireRules: [
+          v => !!v || 'Le nom du bénéficiaire est obligatoire',
+          // v => (v && v.length >= 2) || 'Le prénom doit contenir au moins 2 caracteres',
+        ],
+        telephone_beneficiaireRules: [
+          v => !!v || 'Le numéro de téléphone du bénéficiaire est obligatoire',
+          v => (v && /^\d+$/.test(v)) || 'Le numéro de téléphone du bénéficiaire doit contenir uniquement des chiffres',
+          v => (v && v.length === 9) || 'Le numéro de téléphone du bénéficiaire doit contenir exactement 9 chiffres',
+        ],
+        cni_beneficiaireRules: [
+            v => !!v || 'Le numéro CNI est obligatoire',
+            v => (v && /^\d+$/.test(v)) || 'Le numéro CNI doit contenir uniquement des chiffres',
+            v => (v && v.length === 13) || 'Le numéro CNI doit contenir exactement 13 chiffres',
+        ],
+        libelle_paiementRules: [
+            v => !!v || 'Le libellé du paiement est obligatoire',
+        ],
+        libelle_operateurRules: [
+            v => !!v || 'Le libellé de l\'opérateur est obligatoire',
+            
+        ],
+        montantRules: [
+          v => !!v || 'Le montant à payer est obligatoire',
+          v => (v && /^\d+$/.test(v)) || 'Le montant à payer doit contenir uniquement des chiffres',
+        ],
+       
+       
         textfieldRules: [],
         radioRules: [],
         selectRules: [],
@@ -217,13 +247,21 @@ import { mapMutations, mapGetters } from 'vuex'
         numberRules: [],
         emailRules: [],
         dateRules: [],
+        commentaireRules: [],
+        adresse_beneficiaireRules: [],
       }
     }),
     methods: {
      
       submitForm () {
         let validation = this.$refs.form.validate()
-       
+       if (!validation){
+        this.loadingbrouillon = false
+        this.loadingsoumettre = false
+        this.validSoumettre = true
+        this.validBrouillon = true
+
+       }
         this.model.user_id = parseInt(this.loggedInUser?.id)
         this.model.montant = parseInt(this.model?.montant)
         this.model.id_operateur = this.objet_libelle_operateur?.id

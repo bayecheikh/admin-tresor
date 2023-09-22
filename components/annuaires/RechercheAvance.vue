@@ -179,14 +179,15 @@ import * as XLSX from 'xlsx'
                 { text: data[0][1], value: 'nom',sortable: true },
                 { text: data[0][2], value: 'cni',sortable: true },              
                 { text: data[0][3], value: 'telephone',sortable: true},
-                { text: data[0][4], value: 'mode_paiement',sortable: true },
-                { text: data[0][5], value: 'montant_paiement',sortable: true}
+                { text: data[0][4], value: 'libelle_paiement',sortable: true},
+                { text: data[0][5], value: 'mode_paiement',sortable: true },
+                { text: data[0][6], value: 'montant_paiement',sortable: true}
               ]
               this.$store.commit('annuaires/initheader',headerannuaires)
               
               let list = []
               for(let i=1;i<data.length;i++){
-                list.push({"prenom":data[i][0],"nom":data[i][1],"cni":data[i][2],"telephone":data[i][3],"mode_paiement":data[i][4],"montant_paiement":data[i][5]})
+                list.push({"prenom":data[i][0],"nom":data[i][1],"cni":data[i][2],"telephone":data[i][3],"libelle_paiement":data[i][4],"mode_paiement":data[i][5],"montant_paiement":data[i][6]})
                 console.log(list);
               }
 

@@ -216,9 +216,9 @@ import RechercheTransaction from '@/components/transactions/RechercheTransaction
           this.progress=true
           this.$msasApi.$get('/transactions?status='+status+'&page='+page)
         .then(async (response) => {
-            console.log('Données reçu transactions ++++++: ', response.data.data)
-            let totalPages = Math.ceil(response.data.total / response.data.per_page)
-            this.$store.dispatch('transactions/getTotalPage',totalPages)
+            console.log('Données reçu transactions ++++++: ', response.data)
+           // let totalPages = Math.ceil(response.data.total / response.data.per_page)
+            this.$store.dispatch('transactions/getTotalPage',response.data.last_page)
             this.$store.dispatch('transactions/getPerPage',response.data.per_page)
             this.$store.dispatch('transactions/getList',response.data.data)
             console.log('total page ++++++++++',response.data.total / response.data.per_page)
@@ -236,10 +236,10 @@ import RechercheTransaction from '@/components/transactions/RechercheTransaction
          this.progress=true
          this.$msasApi.get('/transaction-multiple-search/'+param+'?status='+status+'&page='+page)
           .then(async (response) => {
-            console.log('Données reçus++++++++++++',response.data.data.data)
+            console.log('Données reçus++++++++++++',response.data)
             await this.$store.dispatch('transactions/getList',response.data.data.data)
-            let totalPages = Math.ceil(response.data.data.total / response.data.data.per_page)
-            this.$store.dispatch('transactions/getTotalPage',totalPages)
+            //let totalPages = Math.ceil(response.data.data.total / response.data.data.per_page)
+            this.$store.dispatch('transactions/getTotalPage',response.data.data.last_page)
             this.$store.dispatch('transactions/getPerPage',response.data.data.per_page)
             
         }).catch((error) => {

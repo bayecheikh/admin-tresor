@@ -19,7 +19,7 @@
                       <v-checkbox dense v-model="checkbox" rounded class="pl-3 pt-0 mt-0">
                         <template v-slot:label>
                             <div class="caption pt-0 mt-0">
-                            Restez connecter
+                            Restez connecté
                             </div>                                 
                         </template>
                       </v-checkbox>

@@ -1,9 +1,7 @@
-<template>
-  <v-card class="mx-auto mb-5 pl-10 pt-0 pr-10 pb-5 my-5 border-grey">
-    <div class="custom-container mt-0">
-      <v-row class="row pt-6">
-        <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
-              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-auto">
+<template> 
+      <v-row class="row d-flex justify-space-between pt-6 pb-6">
+        <div class="col-lg-4 col-md-4 col-sm-12 pt-0 d-flex flex-column">
+              <div class="custom-bloc bg-marron-2  pl-4 pr-5 pt-5 pb-5 text-sm-center mb-auto">
                 <h4 class="">Nombre total de bénéficiaires</h4>
                 <h2 class="text-primary mt-5">
                   <template v-if="isNTBloading">
@@ -16,9 +14,9 @@
                 </h2>
               </div>                
         </div> 
-        <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">
+        <div class="col-lg-4 col-md-4 col-sm-12 pt-0 d-flex flex-column">
          
-              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
+              <div class="custom-bloc bg-marron-2  pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
                 <h4 class="">Nombre de transactions Wave</h4>
                 <h2 class="text-primary mt-5">
                   <template v-if="isNTWloading">
@@ -31,8 +29,8 @@
                 </h2>
               </div>             
         </div> 
-        <div class="col-lg-4 col-md-4 col-sm-12 m-0 pt-0 pb-30 d-flex flex-column">        
-              <div class="custom-bloc bg-marron-2 mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
+        <div class="col-lg-4 col-md-4 col-sm-12 pt-0 d-flex flex-column">        
+              <div class="custom-bloc bg-marron-2  pl-4 pr-5 pt-5 pb-5 text-sm-center mb-5 mb-auto">
                 <h4 class="">Nombre de transactions Orange Money</h4>
                 <h2 class="text-primary mt-5">
                   <template v-if="isNTOloading">
@@ -46,8 +44,6 @@
               </div>              
         </div>        
       </v-row>             
-    </div>
-  </v-card>
 </template>
   
   <script>

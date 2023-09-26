@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div class="custom-container mt-5">
 
       <v-row class="d-flex justify-content-between">
@@ -14,7 +14,7 @@
               </h1>
               <h1 v-show="isNTBloading" class="custom-stat-boxes-number">
                 <svg class="custom-svg" width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-                  stroke="#999999">
+                  stroke="#d89f11">
                   <g fill="none" fill-rule="evenodd">
                     <g transform="translate(1 1)" stroke-width="2">
                       <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
@@ -26,9 +26,9 @@
                   </g>
                 </svg>
               </h1>
-             
-              <h1 class="mdi mdi-account-group-outline custom-icon-wave"></h1>
-              
+
+              <h1 class="mdi mdi-account-group-outline custom-icon-box"></h1>
+
             </div>
           </div>
         </v-col>
@@ -43,7 +43,7 @@
               </h1>
               <h1 v-show="isNTWloading" class="custom-stat-boxes-number">
                 <svg class="custom-svg" width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-                  stroke="#999999">
+                  stroke="#d89f11">
                   <g fill="none" fill-rule="evenodd">
                     <g transform="translate(1 1)" stroke-width="2">
                       <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
@@ -55,9 +55,9 @@
                   </g>
                 </svg>
               </h1>
-             
-              <h1 class="mdi mdi-cash-check custom-icon-wave"></h1>
-              
+
+              <h1 class="mdi mdi-cash-check custom-icon-box"></h1>
+
             </div>
           </div>
         </v-col>
@@ -72,7 +72,7 @@
               </h1>
               <h1 v-show="isNTOloading" class="custom-stat-boxes-number">
                 <svg class="custom-svg" width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-                  stroke="#999999">
+                  stroke="#d89f11">
                   <g fill="none" fill-rule="evenodd">
                     <g transform="translate(1 1)" stroke-width="2">
                       <circle stroke-opacity=".5" cx="18" cy="18" r="18" />
@@ -84,9 +84,9 @@
                   </g>
                 </svg>
               </h1>
-             
-              <h1 class="mdi mdi-cash-check custom-icon-wave"></h1>
-              
+
+              <h1 class="mdi mdi-cash-check custom-icon-box"></h1>
+
             </div>
           </div>
         </v-col>
@@ -99,191 +99,95 @@
 </template>
 
   
-  <script>
-  import {mapGetters } from 'vuex'
-    import Notification from '@/components/Notification'
-    export default {
-      components: {
-        Notification
-      },
-      mounted: function() {
-        this.$msasApi.get('/beneficiaires')
-          .then(async (response) => {
-            this.nombretotal = response.data.data.data.length
-            this.isNTBloading = false
-          })
-          this.$msasApi.get('/transactions')
-          .then(async (response) => {
-            console.log("DDDFF++", response.data.data.data)
-            this.nombretransactionswave = await response.data.data.data.filter(transaction => transaction.slug_operateur === "wave").length;
-            this.isNTWloading = false
-            this.nombretransactionsom = await response.data.data.data.filter(transaction => transaction.slug_operateur === "om").length;
-            this.isNTOloading = false
-            
-          })
-        /* this.$store.dispatch('structures/getList')
-        this.$store.dispatch('fournisseurs/getList') */
-      },
-      computed: {
-        ...mapGetters({
-        /* listfournisseurs: 'fournisseurs/selectlistfournisseurs',
-        liststructures: 'structures/selectliststructures', */
-        
-      })},
-      data: () => ({
-        isNTBloading : true,
-        isNTWloading : true,
-        isNTOloading : true,
-        nombretotal:null,
-      }),
- 
-      metaInfo () {
-        return {
-          items: this.items,
-        }
-      }
+<script>
+
+import Notification from '@/components/Notification'
+export default {
+  components: {
+    Notification
+  },
+  mounted: function () {
+    this.$msasApi.get('/beneficiaires')
+      .then(async (response) => {
+        this.nombretotal = response.data.data.data.length
+        this.isNTBloading = false
+      })
+    this.$msasApi.get('/transactions')
+      .then(async (response) => {
+        console.log("DDDFF++", response.data.data.data)
+        this.nombretransactionswave = await response.data.data.data.filter(transaction => transaction.slug_operateur === "wave").length;
+        this.isNTWloading = false
+        this.nombretransactionsom = await response.data.data.data.filter(transaction => transaction.slug_operateur === "om").length;
+        this.isNTOloading = false
+
+      })
+    /* this.$store.dispatch('structures/getList')
+    this.$store.dispatch('fournisseurs/getList') */
+  },
+
+  data: () => ({
+    isNTBloading: true,
+    isNTWloading: true,
+    isNTOloading: true,
+    nombretotal: null,
+  }),
+
+  metaInfo() {
+    return {
+      items: this.items,
     }
-  </script>
-  <style>
-  .custom-card-grey .border-grey{
-    background: #f1f3f5d9 !important;
   }
-  .v-text-field fieldset{
-    background-color: #fff !important;
-  }
-  #chartdiv {
-  width: 100%;
-  height: 400px;
- }
- .custom-color-h4{
-  color: #ddaa2c !important;
- }
-
- .loader {
-  border: 2px solid #f3f3f3;
-  border-top: 1px solid #d79b06;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
-  margin: 0 auto;
 }
+</script>
 
+<style >
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.custom-bloc{
-  height: 120px !important;
-  width: 320px !important;
-}
+  0% {
+    transform: rotate(0deg);
+  }
 
-.custom-bg-color{
-  background-color: #faf2df !important;
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-  </style>
-  <style >
-
-  .custom-icon-wave{
-    font-size : 50px;
-    color: #d89f11; 
-  }
-.custom-stat-boxes{
-  background-color: #faf2df ;
-  border-radius: 2%;  
-
-  
+.custom-icon-box {
+  font-size: 50px;
+  color: #d89f11;
 }
 
-  .custom-stat-boxes:hover .custom-icon-taux svg path {
-    fill: #fff;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-traites svg path {
-    stroke: #fff;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-organismes svg path:first-child {
-    fill: #fff;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-organismes svg path:nth-child(2) {
-    fill: #0a3764;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-recus svg rect {
-    stroke: #fff;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-recus svg path {
-    stroke: #fff;
-  }
-  
-  .custom-stat-boxes:hover .custom-icon-recus svg line {
-    stroke: #fff;
-  }
-  
-  .custom-stat-boxes-bloc {
-    display: flex;
-    align-items: center;
-    padding-top: 50px
-  }
-  
-  .custom-stat-boxes {
-    height: 210px;
-  }
-  
-  .custom-stat-boxes:hover,
-  .custom-stat-boxes:hover h1,
-  .custom-stat-boxes:hover svg {
-    color: #ffffff;
-    background-color: #d89f11;
-  }
-  
-  .custom-stat-boxes:hover>h1 {
-    color: #ffffff;
-  }
-  
-  .custom-stat-boxes-title {
-    color: #d89f11;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: left;
-  }
-  .custom-stat-boxes:hover>.custom-stat-boxes-title{
-    color: #ffffff;
-    
-  }
-  
-  .custom-stat-boxes-number {
-    padding-top: 20px;
-    flex: 1;
-    font-size: 34px;
-    color: #d89f11;
-    font-weight: 700;
-    text-align: left;
-  }
-  
-  .bg-marron {
-    border-radius: 5px;
-    padding: 30px;
-    color: #7d7e80;
-    min-height: 110px;
-    background-color: #ffffff;
-  }
-  
-  .bg-marron:hover {
-    background-color: #ffffff;
-    color: #d89f11 ;
-  }
-  
-  .bg-white {
-    border-radius: 5px;
-    background-color: #fff;
-    margin-left: 0.3px;
-    margin-right: 0.3px;
-  }
-  </style>
+.custom-stat-boxes {
+  background-color: #faf2df;
+  border-radius: 2%;
+}
+
+.custom-stat-boxes-bloc {
+  display: flex;
+  align-items: center;
+  padding-top: 50px
+}
+
+.custom-stat-boxes:hover,
+.custom-stat-boxes:hover h1,
+.custom-stat-boxes:hover svg,
+.custom-stat-boxes:hover>.custom-stat-boxes-title {
+  color: #ffffff;
+  background-color: #d89f11;
+}
+
+.custom-stat-boxes-title {
+  color: #d89f11;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.custom-stat-boxes-number {
+
+  flex: 1;
+  font-size: 34px;
+  color: #d89f11;
+  font-weight: 700;
+  text-align: left;
+}</style>
     

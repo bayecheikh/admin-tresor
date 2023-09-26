@@ -177,10 +177,11 @@ export default {
 }
 
 .custom-stat-boxes-title {
+
   color: #d89f11;
   font-size: 18px;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
 }
 
 .custom-stat-boxes-number {

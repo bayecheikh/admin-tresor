@@ -4,10 +4,10 @@
 
       <v-row class="d-flex justify-content-between">
         <v-col md="4" sm="12" lg="4">
-          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center">
+          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center d-flex flex-column">
             <h4 class="custom-stat-boxes-title">Nombre total de bénéficiaires</h4>
-            <div class="custom-stat-boxes-bloc mt-5">
-              <h1 v-if="nombretotal" class="custom-stat-boxes-number">
+            <div class="custom-stat-boxes-bloc mt-auto">
+              <h1 v-if="nombretotal" class="custom-stat-boxes-number ma-2">
                 {{
                   nombretotal
                 }}
@@ -33,9 +33,9 @@
           </div>
         </v-col>
         <v-col md="4" sm="12" lg="4">
-          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center">
+          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center d-flex flex-column">
             <h4 class="custom-stat-boxes-title">Nombre de transactions Wave</h4>
-            <div class="custom-stat-boxes-bloc mt-5">
+            <div class="custom-stat-boxes-bloc mt-auto">
               <h1 v-if="nombretransactionswave" class="custom-stat-boxes-number">
                 {{
                   nombretransactionswave
@@ -62,9 +62,9 @@
           </div>
         </v-col>
         <v-col md="4" sm="12" lg="4">
-          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center">
+          <div class="custom-stat-boxes mr-3 pl-4 pr-5 pt-5 pb-5 text-sm-center d-flex flex-column">
             <h4 class="custom-stat-boxes-title">Nombre de transactions OM</h4>
-            <div class="custom-stat-boxes-bloc mt-5">
+            <div class="custom-stat-boxes-bloc mt-auto">
               <h1 v-if="nombretransactionsom" class="custom-stat-boxes-number">
                 {{
                   nombretransactionsom
@@ -159,6 +159,7 @@ export default {
 .custom-stat-boxes {
   background-color: #faf2df;
   border-radius: 2%;
+  height: 100%;
 }
 
 .custom-stat-boxes-bloc {

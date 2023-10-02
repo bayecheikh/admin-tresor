@@ -28,7 +28,6 @@
               </h1>
 
               <h1 class="mdi mdi-account-group-outline custom-icon-box"></h1>
-              <!-- <h1 class="mdi mdi-account-group-outline custom-icon-box"></h1> -->
 
             </div>
           </div>

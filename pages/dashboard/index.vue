@@ -20,7 +20,7 @@
 import LeftMenu from '@/components/LeftMenu';
 
 import CumulComposante from '@/components/dashboard/CumulComposante';
-import Statistiques from '@/components/dashboard/statistiques';
+import Statistiques from '@/components/dashboard/Statistiques';
 
 import { mapMutations, mapGetters } from 'vuex'
 

@@ -175,7 +175,9 @@ export default {
   color: #ffffff;
   background-color: #d89f11;
 }
-
+.custom-stat-boxes:hover .custom-svg circle {
+  stroke: white;
+}
 .custom-stat-boxes-title {
 
   color: #d89f11;
